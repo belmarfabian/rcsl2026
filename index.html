@@ -23,7 +23,7 @@
     <meta property="twitter:image" content="https://belmarfabian.github.io/rcsl2026/hero-banner.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Courier+Prime:wght@400;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -45,56 +45,79 @@
         }
 
         .hero {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('hero-banner.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             color: white;
             padding: 120px 20px;
-            text-align: center;
-            min-height: 70vh;
+            text-align: right;
+            min-height: 75vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
+            align-items: flex-end;
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to right, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 60%);
+            z-index: 0;
         }
 
         .hero > * {
-            max-width: 1000px;
+            max-width: 800px;
             margin-left: auto;
-            margin-right: auto;
+            margin-right: 40px;
+            position: relative;
+            z-index: 1;
         }
 
         .hero h1 {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 4em;
-            margin-bottom: 25px;
-            color: #c8ff33;
+            font-family: 'Courier Prime', 'Courier New', monospace;
+            font-size: 3.5em;
+            margin-bottom: 30px;
+            color: #FF9900;
             font-weight: 700;
-            text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.9);
-            letter-spacing: -0.02em;
-            line-height: 1.2;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9);
+            letter-spacing: 0.02em;
+            line-height: 1.3;
+            text-transform: uppercase;
+            background: rgba(80, 80, 80, 0.8);
+            padding: 20px 30px;
+            display: inline-block;
         }
 
         .hero h2 {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.4em;
-            margin-bottom: 20px;
+            font-family: 'Courier Prime', 'Courier New', monospace;
+            font-size: 1.3em;
+            margin-bottom: 30px;
             font-weight: 400;
-            letter-spacing: 0.01em;
-            opacity: 0.95;
+            letter-spacing: 0.05em;
+            color: #ffffff;
         }
 
         .hero p {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Courier Prime', 'Courier New', monospace;
             font-size: 1.15em;
             margin-bottom: 10px;
             font-weight: 400;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.03em;
+        }
+
+        .hero p strong {
+            color: #FFEB3B;
+            font-weight: 700;
         }
 
         nav {
-            background-color: #2c3e50;
+            background-color: #1a1a1a;
             padding: 15px 0;
             position: sticky;
             top: 0;
@@ -129,13 +152,13 @@
         }
 
         nav ul li a:hover {
-            color: #b4ff00;
-            border-bottom: 2px solid #b4ff00;
+            color: #FF9900;
+            border-bottom: 2px solid #FF9900;
         }
 
         nav ul li a.active {
-            color: #b4ff00;
-            border-bottom: 2px solid #b4ff00;
+            color: #FF9900;
+            border-bottom: 2px solid #FF9900;
         }
 
         nav ul li:first-child a {
@@ -184,9 +207,8 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            padding: 0;
+            padding: 80px 0 60px 0;
             margin: 0;
-            position: relative;
         }
 
         section.with-bg::before {
@@ -196,23 +218,13 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(to bottom,
-                rgba(255, 255, 255, 0) 0%,
-                rgba(255, 255, 255, 0) 15%,
-                rgba(255, 255, 255, 0.97) 20%,
-                rgba(255, 255, 255, 0.97) 80%,
-                rgba(255, 255, 255, 0) 85%,
-                rgba(255, 255, 255, 0) 100%);
+            background: rgba(255, 255, 255, 0.92);
             z-index: 0;
         }
 
         section.with-bg > * {
             position: relative;
             z-index: 1;
-        }
-
-        section.with-bg .container {
-            padding: 100px 20px;
         }
 
         #theme {
@@ -261,7 +273,7 @@
             font-size: 2.8em;
             margin-bottom: 45px;
             margin-top: 20px;
-            border-bottom: 4px solid #b4ff00;
+            border-bottom: 4px solid #FF9900;
             padding-bottom: 15px;
             font-weight: 700;
             letter-spacing: -0.02em;
@@ -332,8 +344,8 @@
 
         .cta-button {
             display: inline-block;
-            background-color: #b4ff00;
-            color: #1a1a1a;
+            background-color: #FF9900;
+            color: #ffffff;
             padding: 16px 45px;
             text-decoration: none;
             border-radius: 8px;
@@ -343,13 +355,13 @@
             font-size: 1em;
             letter-spacing: 0.02em;
             text-transform: uppercase;
-            box-shadow: 0 4px 15px rgba(180, 255, 0, 0.3);
+            box-shadow: 0 4px 15px rgba(255, 153, 0, 0.3);
         }
 
         .cta-button:hover {
-            background-color: #9ed600;
+            background-color: #E68A00;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(180, 255, 0, 0.4);
+            box-shadow: 0 6px 20px rgba(255, 153, 0, 0.4);
         }
 
         .logos {
@@ -408,7 +420,7 @@
         }
 
         footer {
-            background-color: #2c3e50;
+            background-color: #1a1a1a;
             color: white;
             text-align: center;
             padding: 40px 20px;
@@ -455,8 +467,8 @@
             top: 80px;
             right: 20px;
             z-index: 999;
-            background-color: #b4ff00;
-            color: #1a1a1a;
+            background-color: #FF9900;
+            color: #ffffff;
             border: none;
             padding: 10px 20px;
             border-radius: 25px;
@@ -464,21 +476,21 @@
             cursor: pointer;
             font-size: 0.9em;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 10px rgba(180, 255, 0, 0.3);
+            box-shadow: 0 2px 10px rgba(255, 153, 0, 0.3);
         }
 
         .lang-toggle:hover {
-            background-color: #c8ff33;
+            background-color: #FFAD33;
             transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(180, 255, 0, 0.5);
+            box-shadow: 0 4px 15px rgba(255, 153, 0, 0.5);
         }
 
         .back-to-top {
             position: fixed;
             bottom: 40px;
             right: 40px;
-            background-color: #b4ff00;
-            color: #1a1a1a;
+            background-color: #FF9900;
+            color: #ffffff;
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -490,7 +502,7 @@
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(180, 255, 0, 0.4);
+            box-shadow: 0 4px 15px rgba(255, 153, 0, 0.4);
             z-index: 999;
             text-decoration: none;
         }
@@ -502,7 +514,7 @@
 
         .back-to-top:hover {
             transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(180, 255, 0, 0.6);
+            box-shadow: 0 6px 20px rgba(255, 153, 0, 0.6);
         }
 
         /* Tablet */
