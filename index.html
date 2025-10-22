@@ -401,7 +401,7 @@
             box-shadow: 0 4px 15px rgba(255, 153, 0, 0.5);
         }
 
-        .lang-en, .lang-es {
+        .lang-en, .lang-es, .translate {
             transition: opacity 0.3s ease-in-out;
         }
 
@@ -903,7 +903,7 @@
             langToggleBtn.textContent = currentLang === 'en' ? 'ES' : 'EN';
 
             // Fade out current content
-            const allLangElements = document.querySelectorAll('.lang-en, .lang-es');
+            const allLangElements = document.querySelectorAll('.lang-en, .lang-es, .translate');
             allLangElements.forEach(el => {
                 el.style.opacity = '0';
             });
