@@ -14,7 +14,13 @@
       "Bash(git revert:*)",
       "Bash(rm:*)",
       "Read(//g/Mi unidad/CEP/06 rcsl/**)",
-      "Bash(awk:*)"
+      "Bash(awk:*)",
+      "Bash(for img in biblioteca-udp.jpg udp-casacentral.jpg udp-derecho.jpg)",
+      "Bash(do echo \"$img:\")",
+      "Bash(identify:*)",
+      "Bash(done)",
+      "Bash(for img in biblioteca-udp.jpg udp-casacentral.jpg udp-derecho.jpg facultad-sociales.jpg escaleras-biblioteca.jpg)",
+      "Bash(do file \"$img\")"
     ],
     "deny": [],
     "ask": []
