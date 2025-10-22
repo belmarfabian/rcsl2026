@@ -455,6 +455,36 @@
             max-width: 1000px;
             margin: 40px auto;
             overflow: hidden;
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .section-divider.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-divider::before,
+        .section-divider::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 80px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .section-divider::before {
+            top: 0;
+            background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+        }
+
+        .section-divider::after {
+            bottom: 0;
+            background: linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
         }
 
         .section-divider img {
@@ -463,6 +493,11 @@
             display: block;
             aspect-ratio: 16 / 9;
             object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .section-divider:hover img {
+            transform: scale(1.02);
         }
 
         .lang-toggle {
@@ -1121,6 +1156,24 @@
 
         window.addEventListener('scroll', setActiveLink);
         window.addEventListener('load', setActiveLink);
+
+        // Image dividers scroll animation
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section-divider').forEach(divider => {
+            imageObserver.observe(divider);
+        });
 
         // Back to top button
         const backToTopBtn = document.getElementById('backToTop');
