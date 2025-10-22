@@ -401,6 +401,10 @@
             box-shadow: 0 4px 15px rgba(255, 153, 0, 0.5);
         }
 
+        .lang-en, .lang-es {
+            transition: opacity 0.3s ease-in-out;
+        }
+
         .lang-es {
             display: none;
         }
@@ -898,37 +902,55 @@
             const langToggleBtn = document.getElementById('langToggle');
             langToggleBtn.textContent = currentLang === 'en' ? 'ES' : 'EN';
 
-            // Update all elements with translation
-            document.querySelectorAll('.translate').forEach(element => {
-                const text = element.getAttribute('data-' + currentLang);
-                if (text) {
-                    // Preserve links if they exist
-                    const links = element.querySelectorAll('a');
-                    if (links.length > 0) {
-                        element.innerHTML = text;
-                        // Restore links
-                        links.forEach((link, index) => {
-                            element.innerHTML = element.innerHTML.replace(/RCSL|UDP|Universidad Diego Portales/i, link.outerHTML);
-                        });
-                    } else {
-                        element.textContent = text;
+            // Fade out current content
+            const allLangElements = document.querySelectorAll('.lang-en, .lang-es');
+            allLangElements.forEach(el => {
+                el.style.opacity = '0';
+            });
+
+            // Wait for fade out, then switch content
+            setTimeout(() => {
+                // Update all elements with translation
+                document.querySelectorAll('.translate').forEach(element => {
+                    const text = element.getAttribute('data-' + currentLang);
+                    if (text) {
+                        // Preserve links if they exist
+                        const links = element.querySelectorAll('a');
+                        if (links.length > 0) {
+                            element.innerHTML = text;
+                            // Restore links
+                            links.forEach((link, index) => {
+                                element.innerHTML = element.innerHTML.replace(/RCSL|UDP|Universidad Diego Portales/i, link.outerHTML);
+                            });
+                        } else {
+                            element.textContent = text;
+                        }
                     }
-                }
-            });
+                });
 
-            // Show/hide language-specific content
-            document.querySelectorAll('.lang-en').forEach(el => {
-                el.style.display = currentLang === 'en' ? 'block' : 'none';
-            });
-            document.querySelectorAll('.lang-es').forEach(el => {
-                el.style.display = currentLang === 'es' ? 'block' : 'none';
-            });
+                // Show/hide language-specific content
+                document.querySelectorAll('.lang-en').forEach(el => {
+                    el.style.display = currentLang === 'en' ? 'block' : 'none';
+                });
+                document.querySelectorAll('.lang-es').forEach(el => {
+                    el.style.display = currentLang === 'es' ? 'block' : 'none';
+                });
 
-            // Update HTML lang attribute
-            document.documentElement.lang = currentLang;
+                // Fade in new content
+                setTimeout(() => {
+                    allLangElements.forEach(el => {
+                        if (el.style.display !== 'none') {
+                            el.style.opacity = '1';
+                        }
+                    });
+                }, 50);
 
-            // Save preference
-            localStorage.setItem('language', currentLang);
+                // Update HTML lang attribute
+                document.documentElement.lang = currentLang;
+
+                // Save preference
+                localStorage.setItem('language', currentLang);
+            }, 300);
         }
 
         // Load saved language preference
