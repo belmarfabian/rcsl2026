@@ -375,18 +375,25 @@
             justify-content: center;
         }
 
+        .logo-item a {
+            display: block;
+            transition: all 0.3s ease;
+        }
+
         .logo-item img {
             display: block;
             height: 40px;
             width: auto;
             object-fit: contain;
-            filter: grayscale(0%);
+            filter: grayscale(100%);
             transition: all 0.3s ease;
+            opacity: 0.7;
         }
 
-        .logo-item img:hover {
+        .logo-item a:hover img {
             filter: grayscale(0%);
-            opacity: 0.8;
+            opacity: 1;
+            transform: scale(1.05);
         }
 
         footer {
@@ -1056,22 +1063,34 @@
 
         <div class="logos">
             <div class="logo-item">
-                <img src="isa.png" alt="International Sociological Association">
+                <a href="https://www.isa-sociology.org/en" target="_blank" rel="noopener noreferrer">
+                    <img src="isa.png" alt="International Sociological Association">
+                </a>
             </div>
             <div class="logo-item">
-                <img src="rc12.png" alt="ISA RC12 Sociology of Law">
+                <a href="https://rcsl.hypotheses.org/" target="_blank" rel="noopener noreferrer">
+                    <img src="rc12.png" alt="ISA RC12 Sociology of Law">
+                </a>
             </div>
             <div class="logo-item">
-                <img src="udp-logo.png" alt="Universidad Diego Portales">
+                <a href="https://www.udp.cl" target="_blank" rel="noopener noreferrer">
+                    <img src="udp-logo.png" alt="Universidad Diego Portales">
+                </a>
             </div>
             <div class="logo-item">
-                <img src="derecho.png" alt="Facultad de Derecho UDP">
+                <a href="https://derecho.udp.cl" target="_blank" rel="noopener noreferrer">
+                    <img src="derecho.png" alt="Facultad de Derecho UDP">
+                </a>
             </div>
             <div class="logo-item">
-                <img src="sociologia.png" alt="Facultad de Ciencias Sociales e Historia UDP">
+                <a href="https://socialesehistoria.udp.cl" target="_blank" rel="noopener noreferrer">
+                    <img src="sociologia.png" alt="Facultad de Ciencias Sociales e Historia UDP">
+                </a>
             </div>
             <div class="logo-item">
-                <img src="oñati.png" alt="International Institute for the Sociology of Law">
+                <a href="https://www.iisj.net/" target="_blank" rel="noopener noreferrer">
+                    <img src="oñati.png" alt="International Institute for the Sociology of Law">
+                </a>
             </div>
         </div>
     </div>
