@@ -323,6 +323,21 @@
             border-right-color: #1a1a1a;
         }
 
+        /* Tooltip hacia la izquierda para segunda columna */
+        .info-card:last-child .working-group-tooltip {
+            left: auto;
+            right: 100%;
+            margin-left: 0;
+            margin-right: 20px;
+        }
+
+        .info-card:last-child .working-group-tooltip::before {
+            right: auto;
+            left: 100%;
+            border-right-color: transparent;
+            border-left-color: #1a1a1a;
+        }
+
         .working-group-item:hover .working-group-tooltip {
             visibility: visible;
             opacity: 1;
