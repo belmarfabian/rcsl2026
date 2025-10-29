@@ -267,6 +267,75 @@
             font-family: 'Work Sans', sans-serif;
         }
 
+        .working-group-item {
+            position: relative;
+            cursor: help;
+            padding: 8px 0;
+            transition: color 0.3s ease;
+        }
+
+        .working-group-item:hover {
+            color: #FF6B6B;
+        }
+
+        .working-group-tooltip {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            margin-left: 20px;
+            width: 400px;
+            background-color: #1a1a1a;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        .working-group-tooltip::before {
+            content: '';
+            position: absolute;
+            right: 100%;
+            top: 20px;
+            border: 10px solid transparent;
+            border-right-color: #1a1a1a;
+        }
+
+        .working-group-item:hover .working-group-tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .working-group-tooltip h5 {
+            color: #FF6B6B;
+            margin: 0 0 10px 0;
+            font-size: 1em;
+            font-weight: 600;
+        }
+
+        .working-group-tooltip ul {
+            margin: 10px 0 0 0;
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+
+        .working-group-tooltip ul li {
+            margin-bottom: 8px;
+            text-align: left;
+        }
+
+        .working-group-contact {
+            font-size: 0.85em;
+            opacity: 0.8;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
         .timeline {
             position: relative;
             padding: 10px 0 10px 35px;
@@ -711,6 +780,23 @@
                 gap: 30px;
             }
 
+            .working-group-tooltip {
+                left: 0;
+                right: 0;
+                top: 100%;
+                margin-left: 0;
+                margin-top: 10px;
+                width: auto;
+            }
+
+            .working-group-tooltip::before {
+                right: auto;
+                top: -10px;
+                left: 20px;
+                border-right-color: transparent;
+                border-bottom-color: #1a1a1a;
+            }
+
             .info-card {
                 padding: 25px;
             }
@@ -934,14 +1020,98 @@
             <div class="info-grid" style="margin-top: 30px;">
                 <div class="info-card">
                     <ul class="checklist lang-en">
-                        <li>Civil Justice and Dispute Resolution</li>
-                        <li>Comparative Legal Culture</li>
-                        <li>Comparative Studies of Legal Professions</li>
-                        <li>Digitalization, AI and Society</li>
-                        <li>Gender, Law and Society</li>
-                        <li>Histories of the Sociology of Law</li>
-                        <li>Human Rights</li>
-                        <li>Judicialization of Social Problems</li>
+                        <li class="working-group-item">Civil Justice and Dispute Resolution
+                            <div class="working-group-tooltip">
+                                <h5>Guiding Questions</h5>
+                                <ul>
+                                    <li>How do emerging disputing patterns (including informal resolution and digital platforms) reinforce or erode guarantees of due process and non-arbitrariness?</li>
+                                    <li>Which socio-territorial factors (urban/rural, indigenous peoples, peripheral areas) generate dispute ecosystems with system-level effects on the rule of law?</li>
+                                    <li>How do corporate human-rights due-diligence regimes (e.g., UNGPs, emerging EU laws) interact with access to remedy, extraterritorial jurisdiction, and regulatory enforcement to strengthen the rule of law?</li>
+                                    <li>How can hybrid resolution mechanisms (combining community-based, digital, and restorative practices) contribute to rebuilding public trust in the rule of law?</li>
+                                </ul>
+                                <div class="working-group-contact">Chair: Hideaki Irie (hirie@law.kyushu-u.ac.jp)</div>
+                            </div>
+                        </li>
+                        <li class="working-group-item">Comparative Legal Culture
+                            <div class="working-group-tooltip">
+                                <h5>Guiding Questions</h5>
+                                <ul>
+                                    <li>Is the concept of the rule of law one that is primarily relevant to Western regions, lacking normative force in other regions of the world?</li>
+                                    <li>Can we conceive of alternative forms of the rule of law in societies with different cultural traditions?</li>
+                                    <li>What lessons do non-Western, indigenous, or hybrid justice experiences offer for a democratic rule of law in world society?</li>
+                                </ul>
+                                <div class="working-group-contact">Chair: Agnieszka Kubal (a.kubal@ucl.ac.uk)</div>
+                            </div>
+                        </li>
+                        <li class="working-group-item">Comparative Studies of Legal Professions
+                            <div class="working-group-tooltip">
+                                <h5>Guiding Questions</h5>
+                                <ul>
+                                    <li>What features might different variants of the rule of law share, and on what basis would they differ?</li>
+                                    <li>What evidence links professional practice to changes in public trust, perceived legitimacy, and case outcomes?</li>
+                                    <li>How do ethics frameworks and disciplinary architectures prevent corruption and conflicts of interest, and what designs work well across legal cultures?</li>
+                                    <li>How are emerging professional roles (e.g., compliance officers, legal technologists, mediators) redefining the social legitimacy and ethical foundations of legal professions?</li>
+                                </ul>
+                                <div class="working-group-contact">Chair: Avrom Sherr (avrom.sherr@gmail.com)</div>
+                            </div>
+                        </li>
+                        <li class="working-group-item">Digitalization, AI and Society
+                            <div class="working-group-tooltip">
+                                <h5>Guiding Questions</h5>
+                                <ul>
+                                    <li>How can the rule of law address the challenges posed by radical technological developments such as digital social networks and artificial intelligence?</li>
+                                    <li>How do cross-border data flows, cloud services, LLM and RAG systems reshape legal research, jurisdiction, and enforcement?</li>
+                                    <li>How are AI/automation and digital legal AI services reconfiguring occupational boundaries, and with what implications for transparency and client protection?</li>
+                                </ul>
+                                <div class="working-group-contact">Chairs: Julia Dahlvik & Stefan Larsson</div>
+                            </div>
+                        </li>
+                        <li class="working-group-item">Gender, Law and Society
+                            <div class="working-group-tooltip">
+                                <h5>Guiding Questions</h5>
+                                <ul>
+                                    <li>How do gendered and intersectional inequalities shape access to justice and legal consciousness —and what does this mean for equality before the law?</li>
+                                    <li>How do feminist and queer legal movements challenge the epistemic foundations of the rule of law and promote intersectional understandings of justice?</li>
+                                    <li>How does gender representation in the judiciary and legal professions affect legitimacy, jurisprudence, and public compliance across different legal cultures?</li>
+                                    <li>In what ways do datafication and AI reproduce or mitigate gender bias in legal decision-making?</li>
+                                </ul>
+                                <div class="working-group-contact">Chairs: Barbara Giovanna Bello & Letizia Mancini</div>
+                            </div>
+                        </li>
+                        <li class="working-group-item">Histories of the Sociology of Law
+                            <div class="working-group-tooltip">
+                                <h5>Guiding Questions</h5>
+                                <ul>
+                                    <li>How have core traditions (e.g., Weberian, Durkheimian, legal realism, Marxist, systems theory, feminist and critical approaches) redefined "law," "society," and the rule of law over time?</li>
+                                    <li>What do archival and oral-history studies reveal about the formation of socio-legal research across regions?</li>
+                                    <li>How have technological changes transformed sources, methods, and historiography in legal sociology?</li>
+                                </ul>
+                                <div class="working-group-contact">Chair: Christian Boulanger (boulanger@lhlt.mpg.de)</div>
+                            </div>
+                        </li>
+                        <li class="working-group-item">Human Rights
+                            <div class="working-group-tooltip">
+                                <h5>Guiding Questions</h5>
+                                <ul>
+                                    <li>How does rule of law backsliding (executive concentration of power, weakened judicial independence) affect the protection and enforcement of human rights?</li>
+                                    <li>How do transitional-justice mechanisms align or clash with core rule of law principles?</li>
+                                    <li>In what ways do surveillance, algorithmic policing, and automated decision-making challenge due process and transparency?</li>
+                                    <li>How can new forms of digital activism and civic monitoring revitalize the protection of human rights?</li>
+                                </ul>
+                                <div class="working-group-contact">Chair: Dani Rudnicki (danirud@hotmail.com)</div>
+                            </div>
+                        </li>
+                        <li class="working-group-item">Judicialization of Social Problems
+                            <div class="working-group-tooltip">
+                                <h5>Guiding Questions</h5>
+                                <ul>
+                                    <li>Under what conditions do courts become arenas for social policy disputes (health, education, housing)?</li>
+                                    <li>Does strategic litigation and rights-based framing expand equal protection or entrench inequalities?</li>
+                                    <li>What are the system-level consequences of large-scale judicialization for administrative capacity and public trust?</li>
+                                </ul>
+                                <div class="working-group-contact">Chair: João Velloso (Joao.Velloso@uOttawa.ca)</div>
+                            </div>
+                        </li>
                     </ul>
                     <ul class="checklist lang-es">
                         <li>Justicia Civil y Resolución de Disputas</li>
@@ -957,14 +1127,98 @@
 
                 <div class="info-card">
                     <ul class="checklist lang-en">
-                        <li>Knowledge and Opinion about the Law</li>
-                        <li>Law and Development</li>
-                        <li>Law and Migration</li>
-                        <li>Law and Politics</li>
-                        <li>Law and Popular Culture</li>
-                        <li>Legal Pluralism</li>
-                        <li>Social and Legal Systems</li>
-                        <li>Sociology of Constitutions</li>
+                        <li class="working-group-item">Knowledge and Opinion about the Law
+                            <div class="working-group-tooltip">
+                                <h5>Guiding Questions</h5>
+                                <ul>
+                                    <li>How do differences in legal knowledge —procedural, substantive, and institutional— affect due process, equality before the law, and non-arbitrariness?</li>
+                                    <li>How do misinformation (social media, messaging apps, generative AI) reshape opinions about courts and legality?</li>
+                                    <li>How do collective experiences of injustice and resistance contribute to the formation of new popular understandings of legality?</li>
+                                    <li>In moments of crisis, how do shifts in trust in legal institutions affect the rule of law?</li>
+                                </ul>
+                                <div class="working-group-contact">Chair: Balázs Fekete (fekete.balazs@ajk.elte.hu)</div>
+                            </div>
+                        </li>
+                        <li class="working-group-item">Law and Development
+                            <div class="working-group-tooltip">
+                                <h5>Guiding Questions</h5>
+                                <ul>
+                                    <li>Is the rule of law an achievement that can only be expected in developed countries?</li>
+                                    <li>What is the causal impact of rule of law institutions on inclusive growth (productivity, investment, social mobility)?</li>
+                                    <li>Which legal institutes reduce economic informality without criminalizing livelihoods, and how do they uphold due process and effective remedies?</li>
+                                </ul>
+                                <div class="working-group-contact">Chairs: Pedro Fortes & David Restrepo-Amariles</div>
+                            </div>
+                        </li>
+                        <li class="working-group-item">Law and Migration
+                            <div class="working-group-tooltip">
+                                <h5>Guiding Questions</h5>
+                                <ul>
+                                    <li>How do asylum and border procedures square with due process, access to counsel, non-refoulement, and non-arbitrariness?</li>
+                                    <li>How do multilevel arrangements shape equality before the law and patterns of selective enforcement against migrants?</li>
+                                    <li>Do regularization pathways and labor rights reduce exploitation and informality without criminalizing immigration?</li>
+                                </ul>
+                                <div class="working-group-contact">Chairs: Rashmi Jain & Kyriaki Topidi</div>
+                            </div>
+                        </li>
+                        <li class="working-group-item">Law and Politics
+                            <div class="working-group-tooltip">
+                                <h5>Guiding Questions</h5>
+                                <ul>
+                                    <li>How do constitutional change strategies recalibrate legality, non-retroactivity, and separation of powers?</li>
+                                    <li>How do electoral and party-finance frameworks balance political competition, free expression, and equality before the law?</li>
+                                    <li>What oversight architectures keep emergency and security powers compatible with legality, transparency, and effective remedies?</li>
+                                </ul>
+                                <div class="working-group-contact">Chair: Angélica Cuellar Vázquez (acuellarunam@gmail.com)</div>
+                            </div>
+                        </li>
+                        <li class="working-group-item">Law and Popular Culture
+                            <div class="working-group-tooltip">
+                                <h5>Guiding Questions</h5>
+                                <ul>
+                                    <li>How do portrayals of courts, police, and lawyers in mass media shape legal consciousness and support for due process?</li>
+                                    <li>What do cross-national histories of legal education through pop culture teach about durable gains in legal literacy and access to justice?</li>
+                                    <li>In what ways do platform cultures mediate open-justice principles, fair-trial rights, and juror impartiality?</li>
+                                </ul>
+                                <div class="working-group-contact">Chair: Stefan Machura (s.machura@bangor.ac.uk)</div>
+                            </div>
+                        </li>
+                        <li class="working-group-item">Legal Pluralism
+                            <div class="working-group-tooltip">
+                                <h5>Guiding Questions</h5>
+                                <ul>
+                                    <li>To what extent is the fragmentation of nation-States possible in indigenous processes of decolonization?</li>
+                                    <li>How can intercultural constitutionalism and indigenous legal revitalization be understood as laboratories for rethinking the rule of law globally?</li>
+                                    <li>In what ways do transnational and private legal orders intersect with public courts, and which accountability mechanisms prevent privatized law from eroding the rule of law?</li>
+                                    <li>How should legal pluralism be measured empirically?</li>
+                                </ul>
+                                <div class="working-group-contact">No Chair (contact Local Organizing Committee)</div>
+                            </div>
+                        </li>
+                        <li class="working-group-item">Social and Legal Systems
+                            <div class="working-group-tooltip">
+                                <h5>Guiding Questions</h5>
+                                <ul>
+                                    <li>How do structural couplings between the legal system and other function systems preserve operational autonomy while enabling coordination?</li>
+                                    <li>How does the constitutionalization of world society reorder boundaries between legal orders?</li>
+                                    <li>How do new forms of global interdependence (climate governance, digital economies) challenge the systemic boundaries of law?</li>
+                                    <li>In what ways do algorithmic subsystems couple with legal decision-making, and which transparency requirements keep these couplings compatible with due process?</li>
+                                </ul>
+                                <div class="working-group-contact">Chairs: Stine Piilgaard Porner Nielsen & Luisa Teresa Hedler Ferreira</div>
+                            </div>
+                        </li>
+                        <li class="working-group-item">Sociology of Constitutions
+                            <div class="working-group-tooltip">
+                                <h5>Guiding Questions</h5>
+                                <ul>
+                                    <li>How do constitutional cultures translate constitutional texts into everyday rule of law practices?</li>
+                                    <li>How do emergency regimes interact with rule of law safeguards to prevent normalization of extraordinary powers?</li>
+                                    <li>How do modes of constitutional change manage the tension between adaptability and stability?</li>
+                                    <li>How do constitutional narratives and symbolism sustain or contest the social legitimacy of the rule of law?</li>
+                                </ul>
+                                <div class="working-group-contact">Chair: Jiří Přibáň (priban@cardiff.ac.uk)</div>
+                            </div>
+                        </li>
                     </ul>
                     <ul class="checklist lang-es">
                         <li>Conocimiento y Opinión sobre el Derecho</li>
