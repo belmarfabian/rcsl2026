@@ -20,7 +20,8 @@
       "Bash(identify:*)",
       "Bash(done)",
       "Bash(for img in biblioteca-udp.jpg udp-casacentral.jpg udp-derecho.jpg facultad-sociales.jpg escaleras-biblioteca.jpg)",
-      "Bash(do file \"$img\")"
+      "Bash(do file \"$img\")",
+      "Bash(tree:*)"
     ],
     "deny": [],
     "ask": []
