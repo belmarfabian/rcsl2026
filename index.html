@@ -242,6 +242,31 @@
             box-shadow: none !important;
         }
 
+        .info-grid.registration-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .info-grid.registration-grid .info-card:first-child {
+            grid-column: 1 / -1;
+        }
+
+        .fees-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .fee-column h4 {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: #FF6B6B;
+            font-weight: 600;
+            font-family: 'Work Sans', sans-serif;
+        }
+
         .timeline {
             position: relative;
             padding: 10px 0 10px 35px;
@@ -673,6 +698,19 @@
                 grid-row: auto;
             }
 
+            .info-grid.registration-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-grid.registration-grid .info-card:first-child {
+                grid-column: 1;
+            }
+
+            .fees-columns {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
             .info-card {
                 padding: 25px;
             }
@@ -889,6 +927,58 @@
                 </div>
             </div>
 
+            <h3 class="translate" data-en="RC12 Working Groups" data-es="Grupos de Trabajo RC12" style="margin-top: 50px;">RC12 Working Groups</h3>
+            <p class="lang-en">Proposals may be submitted to any of the following RC12 Working Groups:</p>
+            <p class="lang-es">Las propuestas pueden enviarse a cualquiera de los siguientes Grupos de Trabajo RC12:</p>
+
+            <div class="info-grid" style="margin-top: 30px;">
+                <div class="info-card">
+                    <ul class="checklist lang-en">
+                        <li>Civil Justice and Dispute Resolution</li>
+                        <li>Comparative Legal Culture</li>
+                        <li>Comparative Studies of Legal Professions</li>
+                        <li>Digitalization, AI and Society</li>
+                        <li>Gender, Law and Society</li>
+                        <li>Histories of the Sociology of Law</li>
+                        <li>Human Rights</li>
+                        <li>Judicialization of Social Problems</li>
+                    </ul>
+                    <ul class="checklist lang-es">
+                        <li>Justicia Civil y Resolución de Disputas</li>
+                        <li>Cultura Jurídica Comparada</li>
+                        <li>Estudios Comparados de Profesiones Jurídicas</li>
+                        <li>Digitalización, IA y Sociedad</li>
+                        <li>Género, Derecho y Sociedad</li>
+                        <li>Historias de la Sociología del Derecho</li>
+                        <li>Derechos Humanos</li>
+                        <li>Judicialización de Problemas Sociales</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <ul class="checklist lang-en">
+                        <li>Knowledge and Opinion about the Law</li>
+                        <li>Law and Development</li>
+                        <li>Law and Migration</li>
+                        <li>Law and Politics</li>
+                        <li>Law and Popular Culture</li>
+                        <li>Legal Pluralism</li>
+                        <li>Social and Legal Systems</li>
+                        <li>Sociology of Constitutions</li>
+                    </ul>
+                    <ul class="checklist lang-es">
+                        <li>Conocimiento y Opinión sobre el Derecho</li>
+                        <li>Derecho y Desarrollo</li>
+                        <li>Derecho y Migración</li>
+                        <li>Derecho y Política</li>
+                        <li>Derecho y Cultura Popular</li>
+                        <li>Pluralismo Jurídico</li>
+                        <li>Sistemas Sociales y Jurídicos</li>
+                        <li>Sociología de las Constituciones</li>
+                    </ul>
+                </div>
+            </div>
+
             <div style="text-align: center; margin-top: 40px;">
                 <a href="#" class="cta-button"><span class="translate" data-en="📝 Submit Your Abstract" data-es="📝 Envía tu Resumen">📝 Submit Your Abstract</span></a>
                 <a href="#" class="cta-button"><span class="translate" data-en="📄 Download Full Call (PDF)" data-es="📄 Descargar Convocatoria (PDF)">📄 Download Full Call (PDF)</span></a>
@@ -906,35 +996,41 @@
             <p class="lang-en">Registration will open after the preliminary program is published in April 2026. Early bird rates will be offered for those who register before May 31, 2026.</p>
             <p class="lang-es">La inscripción se abrirá después de que se publique el programa preliminar en abril de 2026. Se ofrecerán tarifas anticipadas para quienes se inscriban antes del 31 de mayo de 2026.</p>
 
-            <div class="info-grid">
+            <div class="info-grid registration-grid">
                 <div class="info-card">
                     <h3 class="translate" data-en="Registration Fees" data-es="Tarifas de Inscripción">Registration Fees</h3>
 
-                    <p class="lang-en"><strong>Early Bird (until May 31, 2026)</strong></p>
-                    <p class="lang-es"><strong>Tarifa Anticipada (hasta el 31 de mayo, 2026)</strong></p>
-                    <p class="lang-en">Non-members (high income countries): USD 200</p>
-                    <p class="lang-es">No miembros (países de altos ingresos): USD 200</p>
-                    <p class="lang-en">RCSL Members (high income countries): USD 150</p>
-                    <p class="lang-es">Miembros RCSL (países de altos ingresos): USD 150</p>
-                    <p class="lang-en">Non-members (other countries): USD 100</p>
-                    <p class="lang-es">No miembros (otros países): USD 100</p>
-                    <p class="lang-en">RCSL Members (other countries): USD 50</p>
-                    <p class="lang-es">Miembros RCSL (otros países): USD 50</p>
-                    <p class="lang-en">Students: USD 20</p>
-                    <p class="lang-es">Estudiantes: USD 20</p>
+                    <div class="fees-columns">
+                        <div class="fee-column">
+                            <h4 class="lang-en">Early Bird (until May 31, 2026)</h4>
+                            <h4 class="lang-es">Tarifa Anticipada (hasta el 31 de mayo, 2026)</h4>
+                            <p class="lang-en">Non-members (high income countries): USD 200</p>
+                            <p class="lang-es">No miembros (países de altos ingresos): USD 200</p>
+                            <p class="lang-en">RCSL Members (high income countries): USD 150</p>
+                            <p class="lang-es">Miembros RCSL (países de altos ingresos): USD 150</p>
+                            <p class="lang-en">Non-members (other countries): USD 100</p>
+                            <p class="lang-es">No miembros (otros países): USD 100</p>
+                            <p class="lang-en">RCSL Members (other countries): USD 50</p>
+                            <p class="lang-es">Miembros RCSL (otros países): USD 50</p>
+                            <p class="lang-en">Students: USD 20</p>
+                            <p class="lang-es">Estudiantes: USD 20</p>
+                        </div>
 
-                    <p style="margin-top: 20px;" class="lang-en"><strong>Standard Registration</strong></p>
-                    <p style="margin-top: 20px;" class="lang-es"><strong>Inscripción Estándar</strong></p>
-                    <p class="lang-en">Non-members (high income countries): USD 300</p>
-                    <p class="lang-es">No miembros (países de altos ingresos): USD 300</p>
-                    <p class="lang-en">RCSL Members (high income countries): USD 200</p>
-                    <p class="lang-es">Miembros RCSL (países de altos ingresos): USD 200</p>
-                    <p class="lang-en">Non-members (other countries): USD 150</p>
-                    <p class="lang-es">No miembros (otros países): USD 150</p>
-                    <p class="lang-en">RCSL Members (other countries): USD 100</p>
-                    <p class="lang-es">Miembros RCSL (otros países): USD 100</p>
-                    <p class="lang-en">Students: USD 50</p>
-                    <p class="lang-es">Estudiantes: USD 50</p>
+                        <div class="fee-column">
+                            <h4 class="lang-en">Standard Registration</h4>
+                            <h4 class="lang-es">Inscripción Estándar</h4>
+                            <p class="lang-en">Non-members (high income countries): USD 300</p>
+                            <p class="lang-es">No miembros (países de altos ingresos): USD 300</p>
+                            <p class="lang-en">RCSL Members (high income countries): USD 200</p>
+                            <p class="lang-es">Miembros RCSL (países de altos ingresos): USD 200</p>
+                            <p class="lang-en">Non-members (other countries): USD 150</p>
+                            <p class="lang-es">No miembros (otros países): USD 150</p>
+                            <p class="lang-en">RCSL Members (other countries): USD 100</p>
+                            <p class="lang-es">Miembros RCSL (otros países): USD 100</p>
+                            <p class="lang-en">Students: USD 50</p>
+                            <p class="lang-es">Estudiantes: USD 50</p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="info-card">
@@ -1064,8 +1160,10 @@
             <div class="info-grid">
                 <div class="info-card">
                     <h3 class="translate" data-en="General Inquiries" data-es="Consultas Generales">General Inquiries</h3>
-                    <p class="lang-en"><strong>Email:</strong> <a href="mailto:rcsl2026@udp.cl">rcsl2026@udp.cl</a></p>
-                    <p class="lang-es"><strong>Correo:</strong> <a href="mailto:rcsl2026@udp.cl">rcsl2026@udp.cl</a></p>
+                    <p class="lang-en"><strong>Email:</strong> <a href="mailto:rcsl2026@mail.udp.cl">rcsl2026@mail.udp.cl</a></p>
+                    <p class="lang-es"><strong>Correo:</strong> <a href="mailto:rcsl2026@mail.udp.cl">rcsl2026@mail.udp.cl</a></p>
+                    <p style="margin-top: 15px;" class="lang-en">For questions about submissions or any other aspect of the conference, please contact the Local Organizing Committee.</p>
+                    <p style="margin-top: 15px;" class="lang-es">Para preguntas sobre envíos o cualquier otro aspecto del congreso, por favor contacte al Comité Organizador Local.</p>
                     <p class="lang-en"><strong>Phone:</strong> +56 2 2676 2000</p>
                     <p class="lang-es"><strong>Teléfono:</strong> +56 2 2676 2000</p>
                     <p class="lang-en"><strong>Website:</strong> <a href="https://www.udp.cl/" target="_blank">www.udp.cl</a></p>
@@ -1093,21 +1191,24 @@
 
             <h3 class="translate" data-en="Local Organizing Committee" data-es="Comité Organizador Local" style="margin-top: 50px;">Local Organizing Committee</h3>
 
+            <p class="lang-en" style="margin-top: 15px; margin-bottom: 30px;">The 2026 RCSL Annual Meeting is co-organized by the School of Sociology and the School of Law, Universidad Diego Portales.</p>
+            <p class="lang-es" style="margin-top: 15px; margin-bottom: 30px;">La Reunión Anual 2026 del RCSL está co-organizada por la Escuela de Sociología y la Escuela de Derecho, Universidad Diego Portales.</p>
+
             <div class="info-grid">
                 <div class="info-card">
                     <h3 class="translate" data-en="Scientific Committee" data-es="Comité Científico">Scientific Committee</h3>
-                    <p><strong>Prof. Dr. Aldo Mascareño</strong><br>Centro de Estudios Públicos, Chile</p>
-                    <p><strong>Prof. Dr. Rodrigo Cordero</strong><br>Universidad Diego Portales, Chile</p>
-                    <p><strong>Prof. Dr. Maite de Cea</strong><br>Universidad Diego Portales, Chile</p>
-                    <p><strong>Prof. Dr. Domingo Lovera</strong><br>Universidad Diego Portales, Chile</p>
+                    <p><strong>Prof. Dr. Aldo Mascareño</strong><br>Centro de Estudios Públicos, Chile<br><a href="https://orcid.org/0000-0002-5803-863X" target="_blank" rel="noopener noreferrer">ORCID</a></p>
+                    <p><strong>Prof. Dr. Rodrigo Cordero</strong><br>School of Sociology, Universidad Diego Portales, Chile<br><a href="https://orcid.org/0000-0001-8441-7855" target="_blank" rel="noopener noreferrer">ORCID</a></p>
+                    <p><strong>Prof. Dr. Maite de Cea</strong><br>Universidad Diego Portales, Chile<br><a href="https://orcid.org/0000-0002-9614-2294" target="_blank" rel="noopener noreferrer">ORCID</a></p>
+                    <p><strong>Prof. Dr. Domingo Lovera</strong><br>School of Law, Universidad Diego Portales, Chile<br><a href="https://orcid.org/0000-0002-3601-096X" target="_blank" rel="noopener noreferrer">ORCID</a></p>
                 </div>
 
                 <div class="info-card">
                     <h3 class="translate" data-en="Executive Committee" data-es="Comité Ejecutivo">Executive Committee</h3>
-                    <p><strong>Sofía Abuhadba</strong><br>Universidad de Chile</p>
+                    <p><strong>Sofía Abuhadba</strong><br>School of Law, Universidad de Chile</p>
                     <p><strong>Juan Rozas</strong><br>Centro de Estudios Públicos, Chile</p>
                     <p><strong>Dr. Fabián Belmar</strong><br>Centro de Estudios Públicos, Chile</p>
-                    <p><strong>Dr. Ricardo Valenzuela</strong><br>Universidad Diego Portales, Chile</p>
+                    <p><strong>Dr. Ricardo Valenzuela</strong><br>School of Sociology, Universidad Diego Portales, Chile</p>
                 </div>
             </div>
         </section>
