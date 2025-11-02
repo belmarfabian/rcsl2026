@@ -421,10 +421,23 @@
             transition: all 0.3s ease;
         }
 
+        /* Animación de tintinear como mapa del metro */
+        @keyframes metro-blink {
+            0%, 100% {
+                opacity: 1;
+                box-shadow: 0 0 0 2px #FF6B6B, 0 0 8px rgba(255, 107, 107, 0.6);
+            }
+            50% {
+                opacity: 0.7;
+                box-shadow: 0 0 0 2px #FF6B6B, 0 0 4px rgba(255, 107, 107, 0.3);
+            }
+        }
+
         /* Círculo completado (pasó la fecha) */
         .timeline-item.completed::before {
             background-color: #FF6B6B;
-            box-shadow: 0 0 0 2px #FF6B6B;
+            box-shadow: 0 0 0 2px #FF6B6B, 0 0 8px rgba(255, 107, 107, 0.6);
+            animation: metro-blink 2s ease-in-out infinite;
         }
 
         /* Círculo mediano (fechas importantes intermedias) */
@@ -445,8 +458,21 @@
             box-shadow: 0 0 0 3px #e0e0e0;
         }
 
+        /* Animación especial para el círculo grande del Conference */
+        @keyframes metro-blink-large {
+            0%, 100% {
+                opacity: 1;
+                box-shadow: 0 0 0 3px #FF6B6B, 0 0 15px rgba(255, 107, 107, 0.7), 0 0 25px rgba(255, 107, 107, 0.3);
+            }
+            50% {
+                opacity: 0.75;
+                box-shadow: 0 0 0 3px #FF6B6B, 0 0 10px rgba(255, 107, 107, 0.5), 0 0 20px rgba(255, 107, 107, 0.2);
+            }
+        }
+
         .timeline-item.large.completed::before {
-            box-shadow: 0 0 0 3px #FF6B6B, 0 0 15px rgba(255, 107, 107, 0.4);
+            box-shadow: 0 0 0 3px #FF6B6B, 0 0 15px rgba(255, 107, 107, 0.7), 0 0 25px rgba(255, 107, 107, 0.3);
+            animation: metro-blink-large 2s ease-in-out infinite;
         }
 
         .timeline-item strong {
