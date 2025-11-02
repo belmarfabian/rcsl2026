@@ -393,7 +393,7 @@
             position: absolute;
             left: 18px;
             top: 0;
-            bottom: 0;
+            bottom: 30px; /* Termina antes del último círculo grande */
             width: 3px;
             background-color: #FF6B6B;
             z-index: 0;
@@ -405,6 +405,7 @@
             margin-bottom: 7.5px;
         }
 
+        /* Círculo normal (pequeño) */
         .timeline-item::before {
             content: '';
             position: absolute;
@@ -413,10 +414,39 @@
             width: 13px;
             height: 13px;
             border-radius: 50%;
-            background-color: #FF6B6B;
+            background-color: #e0e0e0; /* Gris por defecto */
             border: 3px solid #ffffff;
-            box-shadow: 0 0 0 2px #FF6B6B;
+            box-shadow: 0 0 0 2px #e0e0e0;
             z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        /* Círculo completado (pasó la fecha) */
+        .timeline-item.completed::before {
+            background-color: #FF6B6B;
+            box-shadow: 0 0 0 2px #FF6B6B;
+        }
+
+        /* Círculo mediano (fechas importantes intermedias) */
+        .timeline-item.medium::before {
+            width: 17px;
+            height: 17px;
+            left: -27px;
+            top: 6px;
+        }
+
+        /* Círculo grande (Conference - evento final) */
+        .timeline-item.large::before {
+            width: 24px;
+            height: 24px;
+            left: -30.5px;
+            top: 3px;
+            border: 4px solid #ffffff;
+            box-shadow: 0 0 0 3px #e0e0e0;
+        }
+
+        .timeline-item.large.completed::before {
+            box-shadow: 0 0 0 3px #FF6B6B, 0 0 15px rgba(255, 107, 107, 0.4);
         }
 
         .timeline-item strong {
@@ -1015,39 +1045,39 @@
                 <div class="info-card">
                     <h3 class="translate" data-en="Important Dates" data-es="Fechas Importantes">Important Dates</h3>
                     <div class="timeline">
-                        <div class="timeline-item">
+                        <div class="timeline-item" data-date="2025-10-20">
                             <strong class="translate" data-en="Submission Opens" data-es="Apertura de Envíos">Submission Opens</strong>
                             <span class="date">October 20, 2025</span>
                         </div>
-                        <div class="timeline-item">
+                        <div class="timeline-item medium" data-date="2025-12-15">
                             <strong class="translate" data-en="Submission Deadline" data-es="Fecha Límite de Envío">Submission Deadline</strong>
                             <span class="date">December 15, 2025</span>
                         </div>
-                        <div class="timeline-item">
+                        <div class="timeline-item medium" data-date="2026-01-30">
                             <strong class="translate" data-en="Notification of Acceptance" data-es="Notificación de Aceptación">Notification of Acceptance</strong>
                             <span class="date">January 30, 2026</span>
                         </div>
-                        <div class="timeline-item">
+                        <div class="timeline-item medium" data-date="2026-03-31">
                             <strong class="translate" data-en="Registration Deadline for Accepted Papers" data-es="Fecha Límite de Inscripción">Registration Deadline for Accepted Papers</strong>
                             <span class="date">March 31, 2026</span>
                         </div>
-                        <div class="timeline-item">
+                        <div class="timeline-item" data-date="2026-04-20">
                             <strong class="translate" data-en="Preliminary Program" data-es="Programa Preliminar">Preliminary Program</strong>
                             <span class="date">April 20, 2026</span>
                         </div>
-                        <div class="timeline-item">
+                        <div class="timeline-item medium" data-date="2026-05-04">
                             <strong class="translate" data-en="Early Bird Deadline" data-es="Tarifa Anticipada hasta">Early Bird Deadline</strong>
                             <span class="date">May 4, 2026</span>
                         </div>
-                        <div class="timeline-item">
+                        <div class="timeline-item" data-date="2026-08-17">
                             <strong class="translate" data-en="Full Papers Due" data-es="Entrega de Ponencias">Full Papers Due</strong>
                             <span class="date">August 17, 2026</span>
                         </div>
-                        <div class="timeline-item">
+                        <div class="timeline-item" data-date="2026-08-24">
                             <strong class="translate" data-en="Final Program" data-es="Programa Final">Final Program</strong>
                             <span class="date">August 24, 2026</span>
                         </div>
-                        <div class="timeline-item">
+                        <div class="timeline-item large" data-date="2026-08-31">
                             <strong class="translate" data-en="Conference" data-es="Congreso">Conference</strong>
                             <span class="date">August 31 - September 3, 2026</span>
                         </div>
@@ -1913,7 +1943,28 @@
             if (savedLang && savedLang !== currentLang) {
                 toggleLanguage();
             }
+
+            // Update timeline status based on dates
+            updateTimelineStatus();
         });
+
+        // Check timeline dates and mark completed items
+        function updateTimelineStatus() {
+            const today = new Date();
+            today.setHours(0, 0, 0, 0); // Reset time to midnight for accurate date comparison
+
+            const timelineItems = document.querySelectorAll('.timeline-item[data-date]');
+
+            timelineItems.forEach(item => {
+                const itemDateStr = item.getAttribute('data-date');
+                const itemDate = new Date(itemDateStr);
+                itemDate.setHours(0, 0, 0, 0);
+
+                if (today >= itemDate) {
+                    item.classList.add('completed');
+                }
+            });
+        }
 
         // Active navigation indicator
         const sections = document.querySelectorAll('section, .hero');
