@@ -368,12 +368,22 @@
         .working-group-tooltip ul {
             margin: 10px 0 0 0;
             padding-left: 20px;
-            list-style-type: disc;
+            list-style: none;
         }
 
         .working-group-tooltip ul li {
             margin-bottom: 8px;
             text-align: left;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .working-group-tooltip ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #FF6B6B;
+            font-size: 1.1em;
         }
 
         .working-group-contact {
