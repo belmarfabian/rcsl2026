@@ -665,12 +665,23 @@
         ul.checklist {
             margin-left: 25px;
             margin-top: 20px;
+            list-style: none;
         }
 
         ul.checklist li {
             margin-bottom: 10px;
             line-height: 1.5;
             font-size: 1.05em;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        ul.checklist li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #FF6B6B;
+            font-size: 1.2em;
         }
 
         strong {
