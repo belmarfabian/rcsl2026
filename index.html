@@ -903,20 +903,24 @@
                 gap: 30px;
             }
 
-            .working-group-tooltip {
+            .working-group-tooltip,
+            .info-card:last-child .working-group-tooltip {
                 left: 0;
                 right: 0;
                 top: 100%;
                 margin-left: 0;
+                margin-right: 0;
                 margin-top: 10px;
                 width: auto;
             }
 
-            .working-group-tooltip::before {
+            .working-group-tooltip::before,
+            .info-card:last-child .working-group-tooltip::before {
                 right: auto;
-                top: -10px;
                 left: 20px;
+                top: -10px;
                 border-right-color: transparent;
+                border-left-color: transparent;
                 border-bottom-color: #1a1a1a;
             }
 
