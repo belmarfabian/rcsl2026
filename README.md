@@ -1,50 +1,74 @@
 # RCSL 2026 Conference Website
 
-Sitio web oficial para la conferencia 2026 de la Revista de Ciencias Sociales y Jurídicas (RCSL), organizada en la Universidad Diego Portales, Santiago, Chile.
+Sitio web oficial de la conferencia internacional **"The Democratic Rule of Law in World Society"** organizada por el Research Committee on Sociology of Law (RC12) en Santiago, Chile.
 
 ## 🎯 Descripción
 
-Este repositorio contiene el sitio web estático para la conferencia académica RCSL 2026, un evento que reúne a investigadores en ciencias sociales y jurídicas de diversas instituciones.
+Este repositorio contiene el sitio web estático para RCSL 2026, una conferencia internacional de sociología del derecho que se llevará a cabo en la Universidad Diego Portales, Santiago, Chile, del 31 de agosto al 3 de septiembre de 2026.
 
 ## 🏛️ Información del Evento
 
-- **Organización**: Revista de Ciencias Sociales y Jurídicas (RCSL)
+- **Tema**: The Democratic Rule of Law in World Society
+- **Fechas**: 31 de agosto - 3 de septiembre, 2026
 - **Sede**: Universidad Diego Portales (UDP)
 - **Ubicación**: Santiago, Chile
-- **Año**: 2026
-- **Instituciones asociadas**: ISA, Oñati, RC12
+- **Organización**: Research Committee on Sociology of Law (RC12)
+- **Instituciones asociadas**:
+  - ISA (International Sociological Association)
+  - Oñati International Institute for the Sociology of Law
+  - Universidad Diego Portales
 
 ## 📄 Contenido del Sitio
 
-El sitio incluye:
+El sitio incluye información completa sobre:
 
-- **Página principal** (`index.html`): Información general del evento
-- **FAQ** (`faq.html`): Preguntas frecuentes
-- **Call for Papers**: Convocatoria para presentación de trabajos
-- **Imágenes del campus UDP**: Biblioteca, Facultad de Derecho, instalaciones
-- **Logos institucionales**: UDP y organizaciones asociadas
+- **About**: Información general sobre la conferencia y sus organizadores
+- **Theme**: Tema central de la conferencia y áreas temáticas
+- **Call for Papers**: Convocatoria para presentación de trabajos y sesiones
+- **Working Groups**: 18 grupos de trabajo especializados en diferentes áreas de la sociología del derecho
+- **Timeline**: Calendario de fechas importantes (abstracts, early bird registration, etc.)
+- **Registration**: Información sobre inscripción y tarifas
+- **Programme**: Programa de la conferencia
+- **Venue**: Información sobre la sede y alojamiento
+- **FAQ**: Preguntas frecuentes (faq.html)
+
+## 📅 Fechas Importantes
+
+- **Abstract Submission Opens**: December 1, 2025
+- **Abstract Submission Closes**: April 1, 2026
+- **Early-Bird Registration**: Until April 30, 2026
+- **Late Registration**: May 1 - June 30, 2026
+- **Conference**: August 31 - September 3, 2026
 
 ## 🛠️ Tecnología
 
-- **Lenguaje**: HTML (100%)
-- **Tipo**: Sitio web estático
+- **Frontend**: HTML5, CSS3, JavaScript vanilla
+- **Tipo**: Single-page application (SPA) estática
+- **Características**:
+  - Diseño responsive
+  - Soporte multiidioma (inglés/español)
+  - Navegación suave con scroll
+  - Timeline interactiva
+  - Tooltips informativos para Working Groups
 - **Hosting**: GitHub Pages
 
 ## 📁 Estructura del Proyecto
 
 ```
 .
-├── index.html                          # Página principal
+├── index.html                          # Página principal (SPA)
 ├── faq.html                            # Preguntas frecuentes
-├── CFP - 2026 RCSL Santiago.pdf       # Call for Papers
-├── rcsl2026-sitio-udp.zip             # Archivo del sitio
-├── Images/                             # Imágenes del campus y logos
-│   ├── biblioteca-udp.jpg
+├── CFP - 2026 RCSL Santiago.pdf       # Call for Papers oficial
+├── rcsl2026-sitio-udp.zip             # Backup del sitio
+├── Images/                             # Recursos visuales
+│   ├── hero-banner.jpg                 # Banner principal
+│   ├── biblioteca-udp.jpg              # Fotos del campus
 │   ├── facultad-derecho.jpg
-│   ├── udp-logo.png
-│   └── ...
-├── .claude/                            # Configuración de desarrollo
-└── _docs/                              # Documentación adicional
+│   ├── udp-logo.png                    # Logos institucionales
+│   ├── isa.png
+│   ├── onati.png
+│   └── rc12.png
+└── README.md                           # Este archivo
 ```
 
 ## 🚀 Desarrollo Local
@@ -59,25 +83,47 @@ git clone https://github.com/belmarfabian/rcsl2026.git
 cd rcsl2026
 
 # Abrir index.html en navegador
+# O usar un servidor local:
+python -m http.server 8000
+# Luego abrir http://localhost:8000
 ```
+
+## 🌍 Idiomas
+
+El sitio soporta dos idiomas:
+- 🇬🇧 English (default)
+- 🇪🇸 Español
+
+El cambio de idioma se realiza mediante botones en la navegación principal.
 
 ## 📝 Actualización de Contenido
 
 Para actualizar información de la conferencia:
 
-1. Editar archivos HTML correspondientes
-2. Actualizar imágenes en la carpeta `/Images` si es necesario
-3. Modificar el PDF del Call for Papers según actualizaciones
-4. Commit y push de cambios
+1. **Contenido textual**: Editar `index.html` (buscar elementos con clases `lang-en` y `lang-es`)
+2. **FAQ**: Editar `faq.html`
+3. **Imágenes**: Actualizar archivos en la raíz del proyecto
+4. **Call for Papers**: Reemplazar el PDF
+5. **Commit y push** de cambios
+
+## 🎨 Características del Diseño
+
+- **Timeline interactiva**: Visualización cronológica de fechas importantes
+- **Working Groups con tooltips**: Información detallada al hacer hover
+- **Galería de imágenes**: Carousel con fotos del campus UDP
+- **Navegación sticky**: Menú fijo al hacer scroll
+- **Responsive**: Adaptado para móviles y tablets
 
 ## 👥 Contribuciones
 
-Este sitio es mantenido por el equipo organizador de RCSL 2026. Para sugerencias o correcciones, contactar a los organizadores.
+Este sitio es mantenido por el equipo organizador de RCSL 2026. Para sugerencias o correcciones relacionadas con el contenido de la conferencia, contactar a los organizadores.
 
 ## 📫 Contacto
 
-Para información sobre la conferencia, consultar el sitio web o contactar a través de los canales oficiales de RCSL.
+Para información sobre la conferencia, consultar:
+- **Sitio web**: https://belmarfabian.github.io/rcsl2026/
+- **Call for Papers**: [CFP - 2026 RCSL Santiago.pdf](CFP%20-%202026%20RCSL%20Santiago.pdf)
 
 ---
 
-© 2025-2026 RCSL - Universidad Diego Portales
+© 2025-2026 Research Committee on Sociology of Law (RC12) - Universidad Diego Portales
