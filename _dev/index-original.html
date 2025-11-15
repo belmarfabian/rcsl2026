@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RCSL 2026 - The Democratic Rule of Law in World Society</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.5;
+            color: #1a1a1a;
+            scroll-behavior: smooth;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 120px 20px;
+            text-align: center;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero > * {
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 4em;
+            margin-bottom: 25px;
+            color: #c8ff33;
+            font-weight: 700;
+            text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.9);
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .hero h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            opacity: 0.95;
+        }
+
+        .hero p {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15em;
+            margin-bottom: 10px;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+
+        nav {
+            background-color: #2c3e50;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            font-size: 0.95em;
+            letter-spacing: 0.01em;
+            text-transform: none;
+            padding: 5px 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav ul li a:hover {
+            color: #b4ff00;
+            border-bottom: 2px solid #b4ff00;
+        }
+
+        nav ul li a.active {
+            color: #b4ff00;
+            border-bottom: 2px solid #b4ff00;
+        }
+
+        nav ul li:first-child a {
+            padding: 0;
+            border: none;
+        }
+
+        nav ul li:first-child a:hover {
+            border: none;
+            opacity: 0.8;
+        }
+
+        nav ul li:first-child a.active {
+            border: none;
+        }
+
+        .nav-logo {
+            height: 35px;
+            width: auto;
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 5px;
+        }
+
+        .nav-logos {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            width: 100%;
+        }
+
+        section {
+            margin-bottom: 100px;
+            padding-top: 100px;
+            margin-top: -80px;
+            position: relative;
+        }
+
+        section.with-bg {
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 80px 0 60px 0;
+            margin: 0;
+        }
+
+        section.with-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.92);
+            z-index: 0;
+        }
+
+        section.with-bg > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        #theme {
+            background-image: url('santiago-skyline.jpg');
+        }
+
+        #venue {
+            background-image: url('santiago-andes.jpg');
+        }
+
+        .venue-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+            margin-top: 30px;
+        }
+
+        .venue-info {
+            padding-right: 20px;
+        }
+
+        .venue-map {
+            height: fit-content;
+        }
+
+        @media (max-width: 968px) {
+            .venue-layout {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .venue-info {
+                padding-right: 0;
+            }
+
+            .venue-map {
+                position: relative;
+                top: 0;
+            }
+        }
+
+        h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            color: #1a1a1a;
+            font-size: 2.8em;
+            margin-bottom: 45px;
+            margin-top: 20px;
+            border-bottom: 4px solid #b4ff00;
+            padding-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        h3 {
+            font-family: 'Inter', sans-serif;
+            color: #1a1a1a;
+            font-size: 1.4em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+            font-size: 1.05em;
+            line-height: 1.6;
+            color: #2d2d2d;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .info-card {
+            background: #fafafa;
+            padding: 25px;
+            border-radius: 6px;
+            box-shadow: none;
+            transition: all 0.3s ease;
+            border: 1px solid #efefef;
+            font-size: 0.95em;
+        }
+
+        .info-card:hover {
+            background: #f5f5f5;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .info-card h3 {
+            font-family: 'Inter', sans-serif;
+            color: #1a1a1a;
+            background-color: transparent;
+            margin: 0 0 15px 0;
+            padding: 0 0 10px 0;
+            border-bottom: 2px solid #b4ff00;
+            border-radius: 0;
+            font-weight: 600;
+            font-size: 1.15em;
+            letter-spacing: -0.01em;
+        }
+
+        .info-card p,
+        .info-card ul {
+            font-size: 1em;
+            line-height: 1.5;
+        }
+
+        .info-card ul.checklist li {
+            font-size: 1em;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #b4ff00;
+            color: #1a1a1a;
+            padding: 16px 45px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            margin: 20px 10px;
+            transition: all 0.3s ease;
+            font-size: 1em;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(180, 255, 0, 0.3);
+        }
+
+        .cta-button:hover {
+            background-color: #9ed600;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(180, 255, 0, 0.4);
+        }
+
+        .logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 50px;
+            max-width: 1000px;
+            margin: 60px auto 0 auto;
+            padding: 60px 40px;
+            background-color: #ffffff;
+            border-radius: 0;
+            box-shadow: none;
+            border-top: 1px solid #e8e8e8;
+        }
+
+        .logo-item {
+            flex: 0 1 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-item img {
+            display: block;
+            height: auto;
+            width: auto;
+            max-height: 55px;
+            max-width: 200px;
+            object-fit: contain;
+            filter: grayscale(0%);
+            transition: all 0.3s ease;
+        }
+
+        .logo-item img:hover {
+            filter: grayscale(0%);
+            opacity: 0.8;
+        }
+
+        /* Ajustes individuales para mejor balance visual */
+        .logo-item:nth-child(1) img {
+            max-height: 60px;
+        }
+
+        .logo-item:nth-child(2) img {
+            max-height: 55px;
+        }
+
+        .logo-item:nth-child(3) img {
+            max-height: 50px;
+        }
+
+        .logo-item:nth-child(4) img {
+            max-height: 55px;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        footer > * {
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .highlight {
+            background-color: #fffef0;
+            padding: 25px 30px;
+            border-left: 5px solid #b4ff00;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .highlight strong {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        ul.checklist {
+            margin-left: 25px;
+            margin-top: 20px;
+        }
+
+        ul.checklist li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+            font-size: 1.05em;
+        }
+
+        strong {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background-color: #b4ff00;
+            color: #1a1a1a;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(180, 255, 0, 0.4);
+            z-index: 999;
+            text-decoration: none;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(180, 255, 0, 0.6);
+        }
+
+        /* Tablet */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 40px 15px;
+            }
+
+            .hero {
+                padding: 80px 15px;
+                background-attachment: scroll;
+            }
+
+            .hero h1 {
+                font-size: 3em;
+            }
+
+            h2 {
+                font-size: 2.3em;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 15px;
+                min-height: 50vh;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+                line-height: 1.3;
+            }
+
+            .hero h2 {
+                font-size: 1.1em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            nav {
+                padding: 10px 0;
+            }
+
+            nav ul {
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            nav ul li {
+                margin: 8px 10px;
+            }
+
+            nav ul li a {
+                font-size: 0.75em;
+                padding: 3px 0;
+            }
+
+            .nav-logo {
+                height: 25px;
+            }
+
+            .nav-logos {
+                gap: 10px;
+            }
+
+            .container {
+                padding: 30px 15px;
+            }
+
+            section {
+                padding-top: 60px;
+                margin-top: -60px;
+            }
+
+            h2 {
+                font-size: 1.8em;
+                margin-bottom: 25px;
+            }
+
+            h3 {
+                font-size: 1.3em;
+            }
+
+            p {
+                font-size: 1em;
+                text-align: left;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .info-card {
+                padding: 25px;
+            }
+
+            .info-card h3 {
+                margin: -25px -25px 20px -25px;
+                padding: 15px 25px;
+                font-size: 1.15em;
+            }
+
+            .cta-button {
+                padding: 16px 30px;
+                font-size: 1em;
+                margin: 15px 5px;
+                display: block;
+                text-align: center;
+                width: 100%;
+            }
+
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 20px;
+            }
+
+            .highlight {
+                padding: 20px;
+            }
+
+            .logos {
+                gap: 30px;
+                padding: 40px 20px;
+            }
+
+            .logo-item img {
+                max-height: 45px;
+                max-width: 180px;
+            }
+
+            .logo-item:nth-child(1) img {
+                max-height: 45px;
+            }
+
+            .logo-item:nth-child(2) img {
+                max-height: 42px;
+            }
+
+            .logo-item:nth-child(3) img {
+                max-height: 38px;
+            }
+
+            .logo-item:nth-child(4) img {
+                max-height: 42px;
+            }
+        }
+
+        /* Very small phones */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.6em;
+            }
+
+            nav ul li a {
+                font-size: 0.7em;
+                margin: 5px 5px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">
+                <img src="isa.png" alt="ISA" class="nav-logo">
+            </a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#theme">Conference Theme</a></li>
+            <li><a href="#call">Call for Papers</a></li>
+            <li><a href="#registration">Registration</a></li>
+            <li><a href="#programme">Programme</a></li>
+            <li><a href="#venue">Venue</a></li>
+            <li><a href="#accommodation">Accommodation</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero" id="home">
+        <h1>The Democratic Rule of Law in World Society</h1>
+        <h2>Annual Meeting of the Research Committee on Sociology of Law</h2>
+        <p><strong>August 31 to September 3, 2026</strong></p>
+        <p>Universidad Diego Portales, Santiago, Chile</p>
+        <p style="margin-top: 30px;">Contact: <a href="mailto:rcsl2026@udp.cl" style="color: #b4ff00; text-decoration: underline;">rcsl2026@udp.cl</a> | <a href="https://www.udp.cl/" style="color: #b4ff00; text-decoration: underline;">www.udp.cl</a></p>
+    </div>
+
+    <div class="container">
+        <section id="about">
+            <h2>About the Conference</h2>
+            <p>The Research Committee on the Sociology of Law (<a href="https://rcsl.hypotheses.org/" target="_blank">RCSL</a>) is part of the International Sociological Association (ISA) and will be hosted for its 2026 Annual Meeting by Diego Portales University (<a href="https://diegoportalesuniversity.udp.cl/" target="_blank">Universidad Diego Portales, UDP</a>) in Santiago de Chile from August 31 to September 3, 2026.</p>
+
+            <p>UDP was founded on October 4, 1982, as a private, non-profit institution, evolving from the Professional Institute IPEVE, which has been operating since 1963. The university is located in the heart of Santiago, the capital of Chile, an emblematic setting of the country's social, political, and cultural history. As a comprehensive institution whose research and teaching spans from astrophysics to philosophy, Diego Portales University maintains a distinctive commitment to the humanities and social sciences, as evidenced by its outstanding scholarship and active public contributions, particularly in the fields of sociology and law.</p>
+
+            <div class="highlight">
+                <strong>We warmly invite you to join us in Santiago in 2026 for this landmark event</strong> and to contribute to an open, diverse, and forward-looking dialogue on law, democracy, and society in the twenty-first century.
+            </div>
+        </section>
+
+        <section id="theme" class="with-bg">
+            <div class="container">
+            <h2>Conference Theme</h2>
+            <h3>The Democratic Rule of Law in World Society</h3>
+
+            <p>The theme of the RCSL Santiago Conference 2026 is <strong>The Democratic Rule of Law in World Society</strong>. We welcome paper and session proposals on this theme as well as other relevant topics in the sociology of law and justice. This international conference will gather distinguished scholars, practitioners, and students to reflect on and discuss the challenges and prospects of the democratic rule of law in a global context.</p>
+
+            <p>This RCSL Conference will primarily explore whether liberal representative democracy—a cornerstone of modern political and legal systems—can effectively meet the diverse needs of a world society that is now structurally, culturally, and territorially varied. The conference will examine if the normative and legal foundations, as well as the mechanisms of representative democracy, which have historically underpinned the political systems of Western societies and led to significant achievements such as equality before the law, fundamental rights, property rights, the welfare state, and human rights, can still address the conflicts, inequalities, and new technological challenges present in today's global society.</p>
+
+            <h3>Key Challenges</h3>
+            <p>Modern societies seem to be facing various centrifugal forces that weaken the rule of law. In addition to traditional challenges such as territorial wars and forms of patrimonial domination, we are presented with new complexities today. These include:</p>
+
+            <ul class="checklist">
+                <li>Ethnonational conflicts among indigenous peoples intensified by confrontational decolonization strategies</li>
+                <li>The emergence of fundamentalist para-state structures in the Middle East</li>
+                <li>The dominance of drug cartels and organized crime networks, particularly in Latin America and Africa, which violently challenge existing social orders</li>
+                <li>Neo-nationalist state strategies aimed at rebuilding pan-regional zones of cultural influence and political control</li>
+                <li>Massive waves of migration across Europe, North America, and Latin America</li>
+                <li>The increasingly urgent effects of climate change</li>
+                <li>Rapid global transformations driven by new digital technologies, including social networks, big data, and artificial intelligence</li>
+            </ul>
+
+            <p style="margin-top: 20px;">Consequently, the evolutionary achievement of the rule of law is currently facing significant challenges at the global level, both old and new. These challenges call into question its basic assumptions: that it can independently manage the rules governing coexistence in modern society, that no particular form of domination is permitted within its framework, and that the future remains open for alternative perspectives that can adapt both cognitively and normatively to the abstract principles of the rule of law.</p>
+
+            <p>The 2026 RCSL Conference in Santiago aims to address global socio-legal issues in a comprehensive manner. The conference seeks to engage scholars from various regions of the world to discuss the foundations, history, present status, and future projections of the rule of law. It will also explore different variants of the rule of law in contemporary society. Additionally, the call for papers invites proposals for sessions and papers on other relevant issues within the sociology of law and justice.</p>
+            </div>
+        </section>
+
+        <section id="call">
+            <h2>Call for Papers</h2>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Important Dates</h3>
+                    <p><strong>Submission Opens:</strong> October 20, 2025</p>
+                    <p><strong>Submission Deadline:</strong> December 15, 2025</p>
+                    <p><strong>Notification of Acceptance:</strong> January 30, 2026</p>
+                    <p><strong>Registration Deadline for Accepted Papers:</strong> March 31, 2026</p>
+                    <p><strong>Preliminary Program:</strong> April 20, 2026</p>
+                    <p><strong>Early Bird Deadline:</strong> May 31, 2026</p>
+                    <p><strong>Full Papers Due:</strong> August 17, 2026</p>
+                    <p><strong>Final Program:</strong> August 24, 2026</p>
+                    <p><strong>Conference:</strong> August 31 - September 3, 2026</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Submission Guidelines</h3>
+                    <p>We welcome paper and session proposals (abstracts) on the conference theme as well as other relevant topics in the sociology of law and justice.</p>
+                    <p style="margin-top: 15px;"><strong>Submission period:</strong> October 20 - December 15, 2025</p>
+                    <p>Decisions will be communicated by the Scientific Committee on January 30, 2026.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Types of Proposals</h3>
+                    <p><strong>Individual Papers:</strong> Submit an abstract of your research paper</p>
+                    <p><strong>Session Proposals:</strong> Organized panels with multiple papers on a related theme</p>
+                    <p style="margin-top: 15px;">All accepted participants must register by March 31, 2026 to appear in the final program.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="#" class="cta-button">📝 Submit Your Abstract</a>
+                <a href="#" class="cta-button">📄 Download Full Call (PDF)</a>
+            </div>
+        </section>
+
+        <section id="registration">
+            <h2>Registration</h2>
+
+            <p>Registration will open after the preliminary program is published in April 2026. Early bird rates will be offered for those who register before May 31, 2026.</p>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Registration Fees</h3>
+                    <p><strong>Early Bird (until May 31, 2026)</strong></p>
+                    <p>Regular: xxxx</p>
+                    <p>Students: xxxx</p>
+                    <p style="margin-top: 15px;"><strong>Regular Registration</strong></p>
+                    <p>Regular: xxxx</p>
+                    <p>Students: xxxx</p>
+                    <p style="margin-top: 15px;"><em>Fee information will be announced soon.</em></p>
+                </div>
+
+                <div class="info-card">
+                    <h3>What's Included</h3>
+                    <p>Details about what registration includes will be announced with the fee structure.</p>
+                    <p style="margin-top: 15px;">Expected to include:</p>
+                    <ul class="checklist">
+                        <li>Access to all conference sessions</li>
+                        <li>Conference materials</li>
+                        <li>xxxx</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>Important Note</h3>
+                    <p><strong>Accepted participants must register by March 31, 2026</strong> to appear in the final program.</p>
+                    <p style="margin-top: 15px;">Information about scholarships and financial support will be announced at a later date.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="#" class="cta-button">🎫 Registration Opens April 2026</a>
+            </div>
+        </section>
+
+        <section id="programme">
+            <h2>Programme</h2>
+
+            <p><strong>Preliminary program:</strong> April 20, 2026</p>
+            <p><strong>Final program:</strong> August 24, 2026</p>
+
+            <p style="margin-top: 20px;">The detailed programme will be published according to the timeline above. The conference will feature paper presentations, panel sessions, and other academic activities focused on the sociology of law and justice.</p>
+
+            <div class="highlight">
+                <strong>Conference Dates:</strong> August 31 - September 3, 2026<br>
+                Full schedule and session details will be announced with the preliminary program in April 2026.
+            </div>
+        </section>
+
+        <section id="venue" class="with-bg">
+            <div class="container">
+            <h2>Venue</h2>
+
+            <div class="venue-layout">
+                <div class="venue-info">
+                    <h3>Universidad Diego Portales</h3>
+
+                    <p><strong>Address:</strong><br>
+                    Vergara 210, 8370067 Santiago<br>
+                    Región Metropolitana, Chile<br>
+                    Phone: +56 2 2676 2000</p>
+
+                    <p>The conference will be held at Universidad Diego Portales, one of Chile's leading private universities, located in the heart of Santiago. The university is renowned for its commitment to academic excellence, social justice, and democratic values, with particular distinction in the fields of sociology and law.</p>
+                </div>
+
+                <div class="venue-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.6584686087043!2d-70.64847792346475!3d-33.44063409585276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5a0e22f1b65%3A0x5b64b24024b1bf9a!2sVergara%20210%2C%20Santiago%2C%20Regi%C3%B3n%20Metropolitana%2C%20Chile!5e0!3m2!1sen!2scl!4v1234567890123!5m2!1sen!2scl"
+                            width="100%"
+                            height="400"
+                            style="border:0; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+            <div style="margin-top: 50px;">
+                <p><strong>About Santiago:</strong> Santiago is a vibrant metropolis nestled in a valley surrounded by the Andes Mountains. The city is an emblematic setting of Chile's social, political, and cultural history, offering a unique blend of modern urban culture and historical heritage, with excellent museums, restaurants, parks, and cultural venues. Late August to early September marks the beginning of spring in Santiago, with pleasant weather ideal for exploring the city.</p>
+
+                <h3>Getting to Santiago</h3>
+                <p>Santiago is served by Arturo Merino Benítez International Airport (SCL), which has connections to major cities in the Americas, Europe, and Oceania. The airport is approximately 30 minutes from the city center by taxi or shuttle.</p>
+
+                <div class="highlight">
+                    <strong>Visa Information:</strong> Please check with your local Chilean embassy or consulate regarding visa requirements. We will provide official invitation letters for participants who need them for visa applications.
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <section id="accommodation">
+            <h2>Accommodation</h2>
+
+            <p>Information about recommended hotels and accommodation options will be announced at a later date.</p>
+
+            <p>Santiago offers a wide range of accommodation options to suit different budgets. The conference venue is located in the heart of Santiago, with easy access to public transportation and various neighborhoods.</p>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="#" class="cta-button">🏨 Accommodation Info: xxxx</a>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Information</h2>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>General Inquiries</h3>
+                    <p><strong>Email:</strong> <a href="mailto:rcsl2026@udp.cl">rcsl2026@udp.cl</a></p>
+                    <p><strong>Phone:</strong> +56 2 2676 2000</p>
+                    <p><strong>Website:</strong> <a href="https://www.udp.cl/" target="_blank">www.udp.cl</a></p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Conference Venue</h3>
+                    <p><strong>Universidad Diego Portales</strong><br>
+                    Vergara 210, 8370067 Santiago<br>
+                    Región Metropolitana, Chile</p>
+                    <p style="margin-top: 15px;">Located in the heart of Santiago, easily accessible by public transportation.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Stay Connected</h3>
+                    <p>For updates and announcements about the conference, please visit:</p>
+                    <p style="margin-top: 15px;"><a href="https://rcsl.hypotheses.org/" target="_blank">RCSL Official Website</a></p>
+                    <p>Follow the Research Committee on Sociology of Law for the latest news.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="logos">
+            <div class="logo-item">
+                <img src="isa.png" alt="International Sociological Association">
+            </div>
+            <div class="logo-item">
+                <img src="rc12.png" alt="ISA RC12 Sociology of Law">
+            </div>
+            <div class="logo-item">
+                <img src="udp-logo.png" alt="Universidad Diego Portales">
+            </div>
+            <div class="logo-item">
+                <img src="facultad.png" alt="Facultad de Ciencias Sociales e Historia">
+            </div>
+        </div>
+    </div>
+
+    <a href="#home" class="back-to-top" id="backToTop">↑</a>
+
+    <footer>
+        <p>&copy; 2025-2026 RCSL Annual Meeting - Universidad Diego Portales, Santiago, Chile</p>
+        <p>Research Committee on Sociology of Law - International Sociological Association</p>
+        <p style="margin-top: 20px;"><a href="mailto:rcsl2026@udp.cl" style="color: #b4ff00;">rcsl2026@udp.cl</a></p>
+    </footer>
+
+    <script>
+        // Active navigation indicator
+        const sections = document.querySelectorAll('section, .hero');
+        const navLinks = document.querySelectorAll('nav a');
+
+        function setActiveLink() {
+            let currentSection = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= (sectionTop - 100)) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', setActiveLink);
+        window.addEventListener('load', setActiveLink);
+
+        // Back to top button
+        const backToTopBtn = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
