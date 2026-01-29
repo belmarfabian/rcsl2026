@@ -312,7 +312,7 @@
 
 <!-- Hero Banner -->
 <div class="hero">
-    <img class="hero-bg" src="hero-banner-1.jpg" alt="Santiago de Chile">
+    <img class="hero-bg" src="hero-banner.jpg" alt="Santiago de Chile">
     <div class="hero-content">
         <div class="hero-top-text">Call for papers</div>
         <div class="hero-title">The Democratic<br>Rule of Law<br>in World Society</div>
@@ -376,35 +376,35 @@
             </tr>
         </thead>
         <tbody>
-            <tr class="date-strikethrough">
+            <tr data-date="2026-01-18">
                 <td>Submission of paper and session proposals (abstracts)</td>
                 <td>Extended until January 18</td>
             </tr>
-            <tr class="date-strikethrough">
+            <tr data-date="2026-01-30">
                 <td>Decisions of the Scientific Committee on the proposals received</td>
                 <td>January 30</td>
             </tr>
-            <tr class="date-new">
+            <tr data-date="2026-02-01" class="date-new">
                 <td>Registration &amp; Early Bird Opens</td>
                 <td>February 1</td>
             </tr>
-            <tr>
+            <tr data-date="2026-04-20">
                 <td>Publication of preliminary program</td>
                 <td>April 20</td>
             </tr>
-            <tr>
+            <tr data-date="2026-05-31">
                 <td>Last day for early bird reduced fee</td>
                 <td>May 31</td>
             </tr>
-            <tr>
+            <tr data-date="2026-08-17">
                 <td>Reception of papers to be uploaded on this site before the Conference</td>
                 <td>August 17</td>
             </tr>
-            <tr>
+            <tr data-date="2026-08-24">
                 <td>Publication of final program</td>
                 <td>August 24</td>
             </tr>
-            <tr>
+            <tr data-date="2026-09-03">
                 <td><strong>RCSL Santiago Conference</strong></td>
                 <td><strong>August 31 &mdash; September 3</strong></td>
             </tr>
@@ -499,6 +499,17 @@
     <p>&copy; 2025-2026 RCSL Annual Meeting &mdash; Universidad Diego Portales, Santiago, Chile</p>
     <p><a href="mailto:rcsl2026@mail.udp.cl">rcsl2026@mail.udp.cl</a> | <a href="https://rcsl2026.udp.cl">rcsl2026.udp.cl</a></p>
 </div>
+
+<script>
+    // Auto-strikethrough past dates
+    document.querySelectorAll('.dates-table tr[data-date]').forEach(function(row) {
+        var date = new Date(row.getAttribute('data-date') + 'T23:59:59');
+        if (new Date() > date) {
+            row.classList.add('date-strikethrough');
+            row.classList.remove('date-new');
+        }
+    });
+</script>
 
 </body>
 </html>
