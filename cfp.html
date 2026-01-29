@@ -3,15 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CFP - 2026 RCSL Santiago</title>
+    <title>Call for Papers - RCSL 2026 Santiago</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&family=Anton&display=swap" rel="stylesheet">
     <style>
-        @page {
-            size: letter;
-            margin: 0;
-        }
         * {
             margin: 0;
             padding: 0;
@@ -19,28 +15,16 @@
         }
         body {
             font-family: 'Work Sans', sans-serif;
-            font-size: 11pt;
-            line-height: 1.5;
-            color: #333;
-        }
-
-        /* PAGE 1 */
-        .page {
-            width: 8.5in;
-            min-height: 11in;
-            margin: 0 auto;
-            padding: 0;
-            page-break-after: always;
-            position: relative;
-        }
-        .page-padded {
-            padding: 0.7in 0.8in;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
         }
 
         /* Hero banner */
         .hero {
             width: 100%;
-            height: 320px;
+            min-height: 400px;
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
             position: relative;
             overflow: hidden;
@@ -48,213 +32,233 @@
             align-items: center;
             color: white;
         }
-        .hero img {
+        .hero img.hero-bg {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.5;
+            opacity: 0.4;
         }
         .hero-content {
             position: relative;
             z-index: 2;
-            padding: 30px 50px;
-            width: 100%;
+            padding: 60px;
+            max-width: 900px;
         }
         .hero-top-text {
             font-family: 'Anton', sans-serif;
-            font-size: 16pt;
+            font-size: 18px;
             font-weight: 400;
-            letter-spacing: 1px;
-            color: #fff;
-            margin-bottom: 8px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #FF6B6B;
+            margin-bottom: 10px;
         }
         .hero-title {
             font-family: 'Anton', sans-serif;
-            font-size: 42pt;
+            font-size: 52px;
             font-weight: 400;
             line-height: 1.05;
             color: #fff;
-            margin-bottom: 15px;
-        }
-        .hero-right {
-            position: absolute;
-            right: 40px;
-            top: 30px;
-            text-align: right;
-            z-index: 2;
-        }
-        .hero-right img {
-            position: static;
-            opacity: 1;
-            width: 180px;
-            height: auto;
+            margin-bottom: 20px;
         }
         .hero-details {
-            font-size: 12pt;
-            margin-top: 10px;
+            font-size: 16px;
             color: #e0e0e0;
-        }
-        .hero-details strong {
-            color: white;
+            margin-bottom: 10px;
         }
         .hero-date-line {
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-top: 10px;
-            font-size: 13pt;
+            gap: 12px;
+            margin-top: 12px;
+            font-size: 18px;
             color: #FF6B6B;
             font-weight: 600;
         }
         .hero-date-line .line {
-            flex: 1;
-            max-width: 200px;
+            width: 60px;
             height: 2px;
             background: #FF6B6B;
         }
         .hero-location {
-            font-size: 10pt;
+            font-size: 14px;
             color: #ccc;
-            margin-top: 5px;
+            margin-top: 6px;
         }
         .hero-submission {
-            margin-top: 12px;
-            font-size: 11pt;
+            margin-top: 15px;
+            font-size: 14px;
         }
         .hero-submission a {
             color: #FF6B6B;
             text-decoration: none;
         }
-        .hero-logos {
-            position: absolute;
-            bottom: 15px;
-            left: 50px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            z-index: 2;
-        }
-        .hero-logos img {
-            position: static;
-            opacity: 1;
-            height: 28px;
-            width: auto;
-        }
 
-        /* Yellow banner */
-        .yellow-banner {
+        /* Status banner */
+        .status-banner {
             background: #1a1a1a;
             color: #ffffff;
-            padding: 10px 20px;
-            font-size: 11pt;
+            padding: 12px 20px;
+            font-size: 14px;
             font-weight: 600;
             text-align: center;
+            letter-spacing: 0.5px;
         }
 
-        /* Content styles */
+        /* Content */
         .content {
-            padding: 25px 50px 30px;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 30px 60px;
         }
         .content p {
-            margin-bottom: 10px;
+            margin-bottom: 16px;
             text-align: justify;
         }
+        .content a {
+            color: #FF6B6B;
+            text-decoration: none;
+        }
+        .content a:hover {
+            text-decoration: underline;
+        }
         h2 {
-            font-size: 16pt;
+            font-size: 24px;
             font-weight: 700;
-            margin-top: 22px;
-            margin-bottom: 10px;
+            margin-top: 40px;
+            margin-bottom: 16px;
             color: #1a1a1a;
+            border-bottom: 2px solid #FF6B6B;
+            padding-bottom: 8px;
         }
         h3 {
-            font-size: 13pt;
-            font-weight: 700;
-            margin-top: 18px;
-            margin-bottom: 8px;
-            color: #222;
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            color: #1a1a1a;
         }
         ul {
-            margin-left: 30px;
-            margin-bottom: 10px;
+            margin-left: 25px;
+            margin-bottom: 16px;
         }
         ul li {
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
 
         /* Dates table */
         .dates-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 15px 0;
-            font-size: 10.5pt;
+            margin: 20px 0;
+            font-size: 15px;
         }
         .dates-table thead th {
-            background: #f5f5f5;
-            border-bottom: 2px solid #1a1a1a;
-            padding: 6px 10px;
+            background: #1a1a1a;
+            color: #fff;
+            padding: 10px 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        .dates-table thead th:last-child {
             text-align: center;
-            font-weight: 700;
         }
         .dates-table td {
-            padding: 5px 10px;
+            padding: 10px 15px;
             border-bottom: 1px solid #e0e0e0;
             vertical-align: top;
         }
         .dates-table td:last-child {
             text-align: center;
             white-space: nowrap;
+            font-weight: 500;
         }
-        .date-highlight {
-            background: #fff3cd;
-            font-weight: 600;
+        .dates-table tbody tr:hover {
+            background: #f5f5f5;
         }
         .date-strikethrough {
             text-decoration: line-through;
-            opacity: 0.5;
+            opacity: 0.45;
         }
         .date-new {
-            background: #ffe0e0;
+            background: #fff0f0;
             font-weight: 600;
+        }
+        .date-new td:first-child {
+            border-left: 3px solid #FF6B6B;
+        }
+
+        /* Registration box */
+        .reg-box {
+            border: 2px solid #FF6B6B;
+            border-radius: 10px;
+            padding: 25px 30px;
+            margin: 30px 0;
+            background: #fff5f5;
+            text-align: center;
+        }
+        .reg-box p {
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .reg-box .reg-button {
+            display: inline-block;
+            background: #FF6B6B;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: background 0.2s;
+        }
+        .reg-box .reg-button:hover {
+            background: #e55a5a;
+            text-decoration: none;
         }
 
         /* Working groups columns */
         .wg-columns {
             display: flex;
-            gap: 30px;
-            margin: 10px 0;
+            gap: 40px;
+            margin: 16px 0;
         }
         .wg-columns ol {
             margin: 0;
             padding-left: 20px;
-            font-size: 10.5pt;
         }
         .wg-columns ol li {
-            margin-bottom: 2px;
+            margin-bottom: 4px;
         }
 
         /* Committee section */
         .committee-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px 30px;
-            margin: 15px 0;
+            gap: 20px 40px;
+            margin: 20px 0;
         }
         .committee-member {
-            margin-bottom: 5px;
+            padding: 15px;
+            background: #fff;
+            border-radius: 8px;
+            border: 1px solid #eee;
         }
         .committee-member strong {
-            font-size: 11pt;
+            font-size: 15px;
             display: block;
+            margin-bottom: 2px;
         }
         .committee-member .affiliation {
-            font-size: 9.5pt;
-            color: #555;
+            font-size: 13px;
+            color: #666;
         }
         .committee-member a {
-            font-size: 9pt;
+            font-size: 12px;
             color: #FF6B6B;
             text-decoration: none;
         }
@@ -262,109 +266,102 @@
         .exec-list {
             list-style: disc;
             margin-left: 25px;
-            font-size: 10.5pt;
         }
         .exec-list li {
-            margin-bottom: 3px;
+            margin-bottom: 5px;
         }
 
         .contact-box {
-            margin-top: 15px;
-            font-size: 10.5pt;
+            margin-top: 20px;
+            padding: 15px 20px;
+            background: #f5f5f5;
+            border-radius: 8px;
         }
-        .contact-box a {
+
+        /* Footer */
+        .cfp-footer {
+            background: #1a1a1a;
+            color: #999;
+            text-align: center;
+            padding: 25px;
+            font-size: 13px;
+        }
+        .cfp-footer a {
             color: #FF6B6B;
             text-decoration: none;
         }
 
-        /* Registration info box */
-        .reg-box {
-            border: 2px solid #FF6B6B;
-            border-radius: 8px;
-            padding: 15px 20px;
-            margin: 15px 0;
-            background: #fff5f5;
-        }
-        .reg-box p {
-            margin-bottom: 5px;
-            font-size: 10.5pt;
-        }
-        .reg-box a {
-            color: #FF6B6B;
-            font-weight: 600;
-            text-decoration: none;
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content { padding: 30px 20px; }
+            .hero-title { font-size: 36px; }
+            .content { padding: 30px 20px; }
+            .wg-columns { flex-direction: column; gap: 10px; }
+            .committee-grid { grid-template-columns: 1fr; }
         }
 
         @media print {
-            body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-            .page { page-break-after: always; }
-            .page:last-child { page-break-after: avoid; }
+            body { background: white; }
+            .content { max-width: 100%; }
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
         }
     </style>
 </head>
 <body>
 
-<!-- PAGE 1 -->
-<div class="page">
-    <!-- Hero Banner -->
-    <div class="hero">
-        <img src="hero-banner-1.jpg" alt="Santiago">
-        <div class="hero-content">
-            <div class="hero-top-text">Call for papers</div>
-            <div class="hero-title">The Democratic<br>Rule of Law<br>in World Society</div>
-            <div class="hero-details">
-                Annual Meeting of the Research<br>
-                Committee on the Sociology of Law (RCSL)
-            </div>
-            <div class="hero-date-line">
-                August 31, 2026 <span class="line"></span> September 3, 2026
-            </div>
-            <div class="hero-location">Universidad Diego Portales, Santiago de Chile</div>
-            <div class="hero-submission">Abstract submissions: <a href="https://rcsl2026.udp.cl">www.rcsl2026.udp.cl</a></div>
+<!-- Hero Banner -->
+<div class="hero">
+    <img class="hero-bg" src="hero-banner-1.jpg" alt="Santiago de Chile">
+    <div class="hero-content">
+        <div class="hero-top-text">Call for papers</div>
+        <div class="hero-title">The Democratic<br>Rule of Law<br>in World Society</div>
+        <div class="hero-details">
+            Annual Meeting of the Research<br>
+            Committee on the Sociology of Law (RCSL)
         </div>
-    </div>
-
-    <!-- Yellow banner -->
-    <div class="yellow-banner">
-        Submissions closed - Registration now open at rcsl2026.udp.cl
-    </div>
-
-    <!-- Content -->
-    <div class="content">
-        <p>The 2026 Annual Meeting of the <a href="#" style="color:#FF6B6B;text-decoration:none;">Research Committee on the Sociology of Law</a> (RC12), part of the International Sociological Association (ISA), will be hosted by <a href="#" style="color:#FF6B6B;text-decoration:none;">Universidad Diego Portales</a> (UDP) in Santiago, Chile, from August 31 to September 3, 2026.</p>
-
-        <p>Located in the heart of Santiago&mdash;the capital and symbolic center of Chile's social, political, and cultural history&mdash;UDP is a leading institution with research and teaching programs that span from astrophysics to philosophy. The University is recognized for its distinctive commitment to the humanities and social sciences, and for its outstanding research in the fields of sociology and law.</p>
-
-        <p>The theme of the RCSL Santiago Conference 2026 is <strong>The Democratic Rule of Law in World Society</strong>. We invite proposals for papers and sessions addressing this theme, as well as other relevant topics within the sociology of law and justice. The conference will bring together scholars, practitioners, and students from around the world to reflect on the challenges and prospects of the democratic rule of law in a globalized context.</p>
-
-        <p>We warmly invite you to join us in Santiago in 2026 for this landmark event, and to contribute to an open, diverse, and forward-looking dialogue on law, democracy, and society in the twenty-first century.</p>
-
-        <h2>The Conference Theme</h2>
-
-        <p>The 2026 RCSL Conference will explore whether liberal representative democracy&mdash;a cornerstone of modern political and legal systems&mdash;can still meet the diverse needs of a world society that has become structurally, culturally, and territorially complex.</p>
-
-        <p>The conference will examine whether the normative and legal foundations, as well as the mechanisms of representative democracy&mdash;responsible for shaping Western political systems and achievements such as equality before the law, fundamental rights, property rights, the welfare state, and human rights&mdash; can still address the conflicts, inequalities, and new technological challenges of today's global society.</p>
-
-        <p>Modern societies face centrifugal forces that threaten the stability of the <strong>rule of law</strong>. Alongside enduring challenges such as territorial wars and patrimonial domination, new dynamics have emerged, including:</p>
-
-        <ul>
-            <li>Ethnonational conflicts and decolonization struggles among indigenous peoples;</li>
-            <li>Fundamentalist para-state formations in the Middle East;</li>
-        </ul>
+        <div class="hero-date-line">
+            August 31, 2026 <span class="line"></span> September 3, 2026
+        </div>
+        <div class="hero-location">Universidad Diego Portales, Santiago de Chile</div>
+        <div class="hero-submission">Conference website: <a href="https://rcsl2026.udp.cl">www.rcsl2026.udp.cl</a></div>
     </div>
 </div>
 
-<!-- PAGE 2 -->
-<div class="page page-padded">
+<!-- Status banner -->
+<div class="status-banner">
+    Submissions closed &mdash; Registration now open at rcsl2026.udp.cl
+</div>
+
+<!-- Content -->
+<div class="content">
+    <p>The 2026 Annual Meeting of the <a href="https://rcsl2026.udp.cl">Research Committee on the Sociology of Law</a> (RC12), part of the International Sociological Association (ISA), will be hosted by <a href="https://www.udp.cl">Universidad Diego Portales</a> (UDP) in Santiago, Chile, from August 31 to September 3, 2026.</p>
+
+    <p>Located in the heart of Santiago&mdash;the capital and symbolic center of Chile's social, political, and cultural history&mdash;UDP is a leading institution with research and teaching programs that span from astrophysics to philosophy. The University is recognized for its distinctive commitment to the humanities and social sciences, and for its outstanding research in the fields of sociology and law.</p>
+
+    <p>The theme of the RCSL Santiago Conference 2026 is <strong>The Democratic Rule of Law in World Society</strong>. We invite proposals for papers and sessions addressing this theme, as well as other relevant topics within the sociology of law and justice. The conference will bring together scholars, practitioners, and students from around the world to reflect on the challenges and prospects of the democratic rule of law in a globalized context.</p>
+
+    <p>We warmly invite you to join us in Santiago in 2026 for this landmark event, and to contribute to an open, diverse, and forward-looking dialogue on law, democracy, and society in the twenty-first century.</p>
+
+    <h2>The Conference Theme</h2>
+
+    <p>The 2026 RCSL Conference will explore whether liberal representative democracy&mdash;a cornerstone of modern political and legal systems&mdash;can still meet the diverse needs of a world society that has become structurally, culturally, and territorially complex.</p>
+
+    <p>The conference will examine whether the normative and legal foundations, as well as the mechanisms of representative democracy&mdash;responsible for shaping Western political systems and achievements such as equality before the law, fundamental rights, property rights, the welfare state, and human rights&mdash;can still address the conflicts, inequalities, and new technological challenges of today's global society.</p>
+
+    <p>Modern societies face centrifugal forces that threaten the stability of the <strong>rule of law</strong>. Alongside enduring challenges such as territorial wars and patrimonial domination, new dynamics have emerged, including:</p>
+
     <ul>
+        <li>Ethnonational conflicts and decolonization struggles among indigenous peoples;</li>
+        <li>Fundamentalist para-state formations in the Middle East;</li>
         <li>The violent influence of organized crime, drug cartels, and illegal markets, especially in Latin America and Africa;</li>
         <li>Neo-nationalist strategies that seek to rebuild zones of cultural or political dominance;</li>
         <li>Mass migration across Europe, North America, and Latin America;</li>
-        <li>The increasingly urgent impacts of climate change.</li>
+        <li>The increasingly urgent impacts of climate change;</li>
         <li>Rapid global transformations driven by new digital technologies (social media, big data, and artificial intelligence) impacting every aspect of society.</li>
     </ul>
 
-    <p style="margin-top: 10px;">These developments raise critical questions about the resilience and the future of the rule of law as a global normative ideal. Can the rule of law still regulate coexistence in modern societies? Can it continue to prevent domination in its various forms? Can it remain open to alternative perspectives that reinterpret its abstract principles in ways both cognitively adaptive and normatively inclusive?</p>
+    <p>These developments raise critical questions about the resilience and the future of the rule of law as a global normative ideal. Can the rule of law still regulate coexistence in modern societies? Can it continue to prevent domination in its various forms? Can it remain open to alternative perspectives that reinterpret its abstract principles in ways both cognitively adaptive and normatively inclusive?</p>
 
     <p>The 2026 RCSL Santiago Conference aims to address these questions and challenges through a comprehensive global dialogue. We invite contributions examining the foundations, historical trajectories, current transformations, and possible futures of the rule of law in contemporary world society. Proposals engaging with other significant issues in the sociology of law and justice are also welcome.</p>
 
@@ -374,8 +371,8 @@
     <table class="dates-table">
         <thead>
             <tr>
-                <th style="text-align:left;"></th>
-                <th>Dates</th>
+                <th>Event</th>
+                <th>Date</th>
             </tr>
         </thead>
         <tbody>
@@ -408,20 +405,20 @@
                 <td>August 24</td>
             </tr>
             <tr>
-                <td>RCSL Santiago Conference</td>
-                <td>August 31 &mdash; September 3</td>
+                <td><strong>RCSL Santiago Conference</strong></td>
+                <td><strong>August 31 &mdash; September 3</strong></td>
             </tr>
         </tbody>
     </table>
 
     <div class="reg-box">
-        <p><strong>Registration is now open!</strong> Register at:</p>
-        <p><a href="https://docs.google.com/forms/d/e/1FAIpQLScutaeHhskDLy48rVF16Fv4kQ_WzlErkef1kiYgqf7s9XWUpQ/viewform">https://docs.google.com/forms/d/e/1FAIpQLScutaeHhskDLy48rVF16Fv4kQ_WzlErkef1kiYgqf7s9XWUpQ/viewform</a></p>
+        <p><strong>Registration is now open!</strong></p>
         <p>Early bird rates available until May 31, 2026.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScutaeHhskDLy48rVF16Fv4kQ_WzlErkef1kiYgqf7s9XWUpQ/viewform" target="_blank" class="reg-button">Register Now</a>
     </div>
 
     <h2>Submissions</h2>
-    <p>Paper and session proposals were submitted via the conference website: <a href="https://rcsl2026.udp.cl/" style="color:#FF6B6B;text-decoration:none;">https://rcsl2026.udp.cl/</a>. Proposals could be submitted to any of the RC12 Working Groups:</p>
+    <p>Paper and session proposals were submitted via the conference website: <a href="https://rcsl2026.udp.cl/">rcsl2026.udp.cl</a>. Proposals could be submitted to any of the RC12 Working Groups:</p>
 
     <div class="wg-columns">
         <ol>
@@ -446,50 +443,49 @@
         </ol>
     </div>
 
-    <p class="contact-box">For questions about submissions or any other aspect of the conference, please contact the Local Organizing Committee at: <a href="mailto:rcsl2026@mail.udp.cl">rcsl2026@mail.udp.cl</a></p>
-</div>
+    <div class="contact-box">
+        For questions about submissions or any other aspect of the conference, please contact the Local Organizing Committee at: <a href="mailto:rcsl2026@mail.udp.cl">rcsl2026@mail.udp.cl</a>
+    </div>
 
-<!-- PAGE 3 -->
-<div class="page page-padded">
     <h2>Local Organizing Committee</h2>
     <p>The 2026 RCSL Annual Meeting is co-organized by the School of Sociology and the School of Law, Universidad Diego Portales.</p>
 
-    <h3 style="font-style: italic; font-weight: 500; margin-top: 25px;">Scientific Committee</h3>
+    <h3 style="font-style: italic; font-weight: 500; margin-top: 30px;">Scientific Committee</h3>
 
     <div class="committee-grid">
         <div class="committee-member">
             <strong>Prof. Dr. Aldo Mascare&ntilde;o</strong>
             <span class="affiliation">Centro de Estudios P&uacute;blicos, Chile</span><br>
-            <a href="https://orcid.org/0000-0002-5803-863X">https://orcid.org/0000-0002-5803-863X</a>
+            <a href="https://orcid.org/0000-0002-5803-863X">orcid.org/0000-0002-5803-863X</a>
         </div>
         <div class="committee-member">
             <strong>Prof. Dr. Rodrigo Cordero</strong>
             <span class="affiliation">School of Sociology, Universidad Diego Portales, Chile</span><br>
-            <a href="https://orcid.org/0000-0001-8441-7855">https://orcid.org/0000-0001-8441-7855</a>
+            <a href="https://orcid.org/0000-0001-8441-7855">orcid.org/0000-0001-8441-7855</a>
         </div>
         <div class="committee-member">
             <strong>Prof. Dra. Maite de Cea</strong>
             <span class="affiliation">Universidad Diego Portales, Chile</span><br>
-            <a href="https://orcid.org/0000-0002-9614-2294">https://orcid.org/0000-0002-9614-2294</a>
+            <a href="https://orcid.org/0000-0002-9614-2294">orcid.org/0000-0002-9614-2294</a>
         </div>
         <div class="committee-member">
             <strong>Prof. Dr. Domingo Lovera</strong>
             <span class="affiliation">School of Law, Universidad Diego Portales, Chile</span><br>
-            <a href="https://orcid.org/0000-0002-3601-096X">https://orcid.org/0000-0002-3601-096X</a>
+            <a href="https://orcid.org/0000-0002-3601-096X">orcid.org/0000-0002-3601-096X</a>
         </div>
         <div class="committee-member">
             <strong>Prof. Dra. Jeanne Hersant</strong>
             <span class="affiliation">Pontificia Universidad Cat&oacute;lica de Chile</span><br>
-            <a href="https://orcid.org/0000-0002-3108-2817">https://orcid.org/0000-0002-3108-2817</a>
+            <a href="https://orcid.org/0000-0002-3108-2817">orcid.org/0000-0002-3108-2817</a>
         </div>
         <div class="committee-member">
             <strong>Prof. Dr. Fabien Le Bonniec</strong>
             <span class="affiliation">Universidad de la Frontera, Chile</span><br>
-            <a href="https://orcid.org/0000-0002-3633-7962">https://orcid.org/0000-0002-3633-7962</a>
+            <a href="https://orcid.org/0000-0002-3633-7962">orcid.org/0000-0002-3633-7962</a>
         </div>
     </div>
 
-    <h3 style="font-style: italic; font-weight: 500; margin-top: 25px;">Executive Committee</h3>
+    <h3 style="font-style: italic; font-weight: 500; margin-top: 30px;">Executive Committee</h3>
 
     <ul class="exec-list">
         <li>Sof&iacute;a Abuhadba, School of Law, Universidad de Chile</li>
@@ -497,6 +493,11 @@
         <li>Dr. Fabi&aacute;n Belmar, Centro de Estudios P&uacute;blicos, Chile</li>
         <li>Dr. Ricardo Valenzuela, School of Sociology, Universidad Diego Portales, Chile</li>
     </ul>
+</div>
+
+<div class="cfp-footer">
+    <p>&copy; 2025-2026 RCSL Annual Meeting &mdash; Universidad Diego Portales, Santiago, Chile</p>
+    <p><a href="mailto:rcsl2026@mail.udp.cl">rcsl2026@mail.udp.cl</a> | <a href="https://rcsl2026.udp.cl">rcsl2026.udp.cl</a></p>
 </div>
 
 </body>
