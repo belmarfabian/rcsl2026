@@ -442,6 +442,16 @@
             animation: metro-blink 2s ease-in-out infinite;
         }
 
+        .timeline-item.completed strong {
+            text-decoration: line-through;
+            opacity: 0.5;
+        }
+
+        .timeline-item.completed .date {
+            text-decoration: line-through;
+            opacity: 0.5;
+        }
+
         /* Círculo mediano (fechas importantes intermedias) */
         .timeline-item.medium::before {
             width: 17px;
@@ -1102,9 +1112,9 @@
                             <strong class="translate" data-en="Notification of Acceptance" data-es="Notificación de Aceptación">Notification of Acceptance</strong>
                             <span class="date">January 30, 2026</span>
                         </div>
-                        <div class="timeline-item medium" data-date="2026-03-31">
-                            <strong class="translate" data-en="Registration Deadline for Accepted Papers" data-es="Fecha Límite de Inscripción">Registration Deadline for Accepted Papers</strong>
-                            <span class="date">March 31, 2026</span>
+                        <div class="timeline-item medium" data-date="2026-02-01">
+                            <strong class="translate" data-en="Registration & Early Bird Opens" data-es="Apertura de Inscripción y Tarifa Anticipada">Registration & Early Bird Opens</strong>
+                            <span class="date">February 1, 2026</span>
                         </div>
                         <div class="timeline-item" data-date="2026-04-20">
                             <strong class="translate" data-en="Preliminary Program" data-es="Programa Preliminar">Preliminary Program</strong>
@@ -1133,8 +1143,8 @@
                     <h3 class="translate" data-en="Submission Guidelines" data-es="Guías de Envío">Submission Guidelines</h3>
                     <p class="lang-en">We welcome paper and session proposals (abstracts) on the conference theme as well as other relevant topics in the sociology of law and justice.</p>
                     <p class="lang-es">Damos la bienvenida a propuestas de ponencias y sesiones (resúmenes) sobre el tema del congreso así como otros temas relevantes en sociología del derecho y la justicia.</p>
-                    <p style="margin-top: 15px;" class="lang-en"><strong>Submission period:</strong> October 20, 2025 - January 18, 2026</p>
-                    <p style="margin-top: 15px;" class="lang-es"><strong>Período de envío:</strong> 20 de octubre, 2025 - 18 de enero, 2026</p>
+                    <p style="margin-top: 15px; text-decoration: line-through; opacity: 0.5;" class="lang-en"><strong>Submission period:</strong> October 20, 2025 - January 18, 2026</p>
+                    <p style="margin-top: 15px; text-decoration: line-through; opacity: 0.5;" class="lang-es"><strong>Período de envío:</strong> 20 de octubre, 2025 - 18 de enero, 2026</p>
                     <p class="lang-en">Decisions will be communicated by the Scientific Committee on January 30, 2026.</p>
                     <p class="lang-es">Las decisiones serán comunicadas por el Comité Científico el 30 de enero de 2026.</p>
                 </div>
@@ -1145,8 +1155,6 @@
                     <p class="lang-es"><strong>Ponencias Individuales:</strong> Envíe un resumen de su trabajo de investigación</p>
                     <p class="lang-en"><strong>Session Proposals:</strong> Organized panels with multiple papers on a related theme</p>
                     <p class="lang-es"><strong>Propuestas de Sesión:</strong> Paneles organizados con múltiples ponencias sobre un tema relacionado</p>
-                    <p style="margin-top: 15px;" class="lang-en">All accepted participants must register by March 31, 2026 to appear in the final program.</p>
-                    <p style="margin-top: 15px;" class="lang-es">Todos los participantes aceptados deben inscribirse antes del 31 de marzo de 2026 para aparecer en el programa final.</p>
                 </div>
             </div>
 
@@ -1156,7 +1164,7 @@
             <p class="translate" data-en="Organizers and chairs are encouraged to facilitate cross-language dialogue, and whenever possible, presentation slides or handouts should include key points in both languages to promote mutual understanding." data-es="Se alienta a los organizadores y coordinadores a facilitar el diálogo entre idiomas, y cuando sea posible, las diapositivas de presentación o folletos deben incluir los puntos clave en ambos idiomas para promover la comprensión mutua.">Organizers and chairs are encouraged to facilitate cross-language dialogue, and whenever possible, presentation slides or handouts should include key points in both languages to promote mutual understanding.</p>
 
             <div style="text-align: center; margin-top: 40px;">
-                <a href="https://forms.gle/PKaoJR2AvdviqjeC8" target="_blank" class="cta-button"><span class="translate" data-en="📝 Submit Your Abstract" data-es="📝 Envía tu Resumen">📝 Submit Your Abstract</span></a>
+                <a href="https://forms.gle/PKaoJR2AvdviqjeC8" target="_blank" class="cta-button" style="text-decoration: line-through; opacity: 0.5; pointer-events: none;"><span class="translate" data-en="📝 Submissions Closed" data-es="📝 Envíos Cerrados">📝 Submissions Closed</span></a>
                 <a href="CFP - 2026 RCSL Santiago.pdf" target="_blank" class="cta-button"><span class="translate" data-en="📄 Download Full Call" data-es="📄 Descargar Convocatoria">📄 Download Full Call</span></a>
             </div>
         </section>
@@ -1666,8 +1674,8 @@
         <section id="registration">
             <h2 class="translate" data-en="Registration" data-es="Inscripción">Registration</h2>
 
-            <p class="lang-en">Registration will open after the preliminary program is published in April 2026. Early bird rates will be offered for those who register before May 31, 2026.</p>
-            <p class="lang-es">La inscripción se abrirá después de que se publique el programa preliminar en abril de 2026. Se ofrecerán tarifas anticipadas para quienes se inscriban antes del 31 de mayo de 2026.</p>
+            <p class="lang-en">Registration opens on February 1, 2026. Early bird rates will be offered for those who register before May 31, 2026.</p>
+            <p class="lang-es">La inscripción se abre el 1 de febrero de 2026. Se ofrecerán tarifas anticipadas para quienes se inscriban antes del 31 de mayo de 2026.</p>
 
             <div class="info-grid registration-grid">
                 <div class="info-card">
@@ -1738,15 +1746,13 @@
 
                 <div class="info-card">
                     <h3 class="translate" data-en="Important Note" data-es="Nota Importante">Important Note</h3>
-                    <p class="lang-en"><strong>Accepted participants must register by March 31, 2026</strong> to appear in the final program.</p>
-                    <p class="lang-es"><strong>Los participantes aceptados deben inscribirse antes del 31 de marzo de 2026</strong> para aparecer en el programa final.</p>
                     <p style="margin-top: 15px;" class="lang-en">Information about scholarships and financial support will be announced at a later date.</p>
                     <p style="margin-top: 15px;" class="lang-es">La información sobre becas y apoyo financiero se anunciará en una fecha posterior.</p>
                 </div>
             </div>
 
             <div style="text-align: center; margin-top: 40px;">
-                <a href="#" class="cta-button"><span class="translate" data-en="🎫 Registration Opens April 2026" data-es="🎫 Inscripción Abre en Abril 2026">🎫 Registration Opens April 2026</span></a>
+                <a href="#" class="cta-button"><span class="translate" data-en="🎫 Registration Opens February 1, 2026" data-es="🎫 Inscripción Abre el 1 de Febrero, 2026">🎫 Registration Opens February 1, 2026</span></a>
             </div>
         </section>
 
