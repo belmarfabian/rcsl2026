@@ -641,9 +641,16 @@
             border-right: 1px solid #e8e8e8;
             vertical-align: middle;
             line-height: 1.4;
-            height: 72px;
         }
-        .schedule-table tbody th { height: 72px; }
+        .schedule-table { --hour: 80px; }
+        .schedule-table tr.h-30 td,
+        .schedule-table tr.h-30 th { height: calc(var(--hour) * 0.5); }
+        .schedule-table tr.h-60 td,
+        .schedule-table tr.h-60 th { height: var(--hour); }
+        .schedule-table tr.h-90 td,
+        .schedule-table tr.h-90 th { height: calc(var(--hour) * 1.5); }
+        .schedule-table tr.h-evening td,
+        .schedule-table tr.h-evening th { height: calc(var(--hour) * 0.75); }
         .schedule-table td:last-child,
         .schedule-table tbody th:last-child { border-right: none; }
         .schedule-table tr:last-child td,
@@ -1876,60 +1883,60 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr class="h-60">
                             <th>09:00&ndash;10:00</th>
                             <td><span class="lang-en">Registration</span><span class="lang-es">Inscripción</span></td>
                             <td><span class="lang-en">Reception</span><span class="lang-es">Recepción</span></td>
                             <td><span class="lang-en">Reception</span><span class="lang-es">Recepción</span></td>
                             <td><span class="lang-en">Reception</span><span class="lang-es">Recepción</span></td>
                         </tr>
-                        <tr>
+                        <tr class="h-60">
                             <th>10:00&ndash;11:00</th>
                             <td class="ceremony"><span class="lang-en">Opening Ceremony</span><span class="lang-es">Ceremonia de Apertura</span><small><span class="lang-en">Keynote: Carlos Peña</span><span class="lang-es">Keynote: Carlos Peña</span></small></td>
                             <td class="roundtable"><span class="lang-en">Roundtable</span><span class="lang-es">Mesa redonda</span><small>Pierre Guibentif</small></td>
                             <td class="roundtable"><span class="lang-en">Roundtables (2)</span><span class="lang-es">Mesas redondas (2)</span><small><span class="lang-en">Ralf Rogowski · TBD</span><span class="lang-es">Ralf Rogowski · Por definir</span></small></td>
                             <td class="session"><span class="lang-en">Paper / panel sessions 9</span><span class="lang-es">Sesiones de ponencias / paneles 9</span></td>
                         </tr>
-                        <tr>
+                        <tr class="h-30">
                             <th>11:00&ndash;11:30</th>
                             <td class="break" colspan="4"><span class="lang-en">Coffee break</span><span class="lang-es">Coffee break</span></td>
                         </tr>
-                        <tr>
+                        <tr class="h-90">
                             <th>11:30&ndash;13:00</th>
                             <td class="session"><span class="lang-en">Paper / panel sessions 1</span><span class="lang-es">Sesiones de ponencias / paneles 1</span></td>
                             <td class="business"><span class="lang-en">Business meeting RCSL</span><span class="lang-es">Reunión de trabajo RCSL</span><small><span class="lang-en">Plenary 2</span><span class="lang-es">Plenaria 2</span></small></td>
                             <td class="business"><span class="lang-en">Business meeting RCSL</span><span class="lang-es">Reunión de trabajo RCSL</span><small><span class="lang-en">Plenary 4</span><span class="lang-es">Plenaria 4</span></small></td>
                             <td class="ceremony"><span class="lang-en">Closing session &mdash; Keynote</span><span class="lang-es">Sesión de cierre &mdash; Keynote</span><small><span class="lang-en">Plenary 5</span><span class="lang-es">Plenaria 5</span></small></td>
                         </tr>
-                        <tr>
+                        <tr class="h-60">
                             <th>13:00&ndash;14:00</th>
                             <td class="meal" colspan="4"><span class="lang-en">Lunch</span><span class="lang-es">Almuerzo</span></td>
                         </tr>
-                        <tr>
+                        <tr class="h-90">
                             <th>14:00&ndash;15:30</th>
                             <td class="session"><span class="lang-en">Paper / panel sessions 2</span><span class="lang-es">Sesiones de ponencias / paneles 2</span></td>
                             <td class="session"><span class="lang-en">Paper / panel sessions 5</span><span class="lang-es">Sesiones de ponencias / paneles 5</span></td>
                             <td class="session"><span class="lang-en">Paper / panel sessions 7</span><span class="lang-es">Sesiones de ponencias / paneles 7</span></td>
                             <td class="session"><span class="lang-en">Paper / panel sessions 10</span><span class="lang-es">Sesiones de ponencias / paneles 10</span></td>
                         </tr>
-                        <tr>
+                        <tr class="h-30">
                             <th>15:30&ndash;16:00</th>
                             <td class="break" colspan="3"><span class="lang-en">Coffee break</span><span class="lang-es">Coffee break</span></td>
                             <td rowspan="3" class="empty"></td>
                         </tr>
-                        <tr>
+                        <tr class="h-90">
                             <th>16:00&ndash;17:30</th>
                             <td class="session"><span class="lang-en">Paper / panel sessions 3</span><span class="lang-es">Sesiones de ponencias / paneles 3</span></td>
                             <td class="session"><span class="lang-en">Paper / panel sessions 6</span><span class="lang-es">Sesiones de ponencias / paneles 6</span></td>
                             <td class="session"><span class="lang-en">Paper / panel sessions 8</span><span class="lang-es">Sesiones de ponencias / paneles 8</span></td>
                         </tr>
-                        <tr>
+                        <tr class="h-90">
                             <th>17:30&ndash;19:00</th>
                             <td class="session"><span class="lang-en">Paper / panel sessions 4</span><span class="lang-es">Sesiones de ponencias / paneles 4</span></td>
                             <td class="social"><span class="lang-en">Local committee event</span><span class="lang-es">Evento del comité local</span><small><span class="lang-en">Plenary 2</span><span class="lang-es">Plenaria 2</span></small></td>
                             <td class="social"><span class="lang-en">Local committee event</span><span class="lang-es">Evento del comité local</span><small><span class="lang-en">Plenary 3</span><span class="lang-es">Plenaria 3</span></small></td>
                         </tr>
-                        <tr>
+                        <tr class="h-evening">
                             <th>19:00</th>
                             <td class="empty"></td>
                             <td class="social"><span class="lang-en">Cocktail</span><span class="lang-es">Cóctel</span></td>
