@@ -650,15 +650,19 @@
             color: white;
         }
         .updates-pill { white-space: nowrap; }
+        .updates-date-short { display: none; }
         @media (max-width: 768px) {
-            .updates-bar { bottom: 38%; padding: 6px 10px; }
-            .updates-bar-inner { flex-direction: column; align-items: center; gap: 6px; }
-            .updates-items { flex: none; width: 100%; justify-content: center; flex-wrap: nowrap; gap: 6px; }
-            .updates-pill { font-size: 0.72em; padding: 4px 8px; flex-shrink: 1; min-width: 0; }
+            .updates-bar { bottom: 38%; padding: 5px 8px; }
+            .updates-bar-inner { flex-direction: row; align-items: center; gap: 6px; flex-wrap: nowrap; justify-content: center; }
+            .updates-text { display: none; }
+            .updates-date-long { display: none !important; }
+            .updates-date-short { display: inline; }
+            .updates-items { flex: 0 1 auto; flex-wrap: nowrap; gap: 5px; }
+            .updates-pill { font-size: 0.7em; padding: 3px 7px; flex-shrink: 1; min-width: 0; }
             .updates-pill .pill-extra { display: none; }
-            .updates-label { font-size: 0.8em; gap: 5px; }
-            .updates-badge { font-size: 0.65em; padding: 2px 6px; }
-            .updates-date { font-size: 0.75em; }
+            .updates-label { font-size: 0.75em; gap: 4px; flex-shrink: 0; }
+            .updates-badge { font-size: 0.6em; padding: 2px 5px; }
+            .updates-date { font-size: 0.72em; }
         }
 
         .cta-button.alt {
@@ -1202,10 +1206,15 @@
             <div class="updates-bar-inner">
                 <div class="updates-label">
                     <span class="updates-badge">NEW</span>
-                    <span class="lang-en">Latest updates</span>
-                    <span class="lang-es">Últimas actualizaciones</span>
-                    <span class="updates-date lang-en">· April 28, 2026</span>
-                    <span class="updates-date lang-es">· 28 de abril, 2026</span>
+                    <span class="updates-text">
+                        <span class="lang-en">Latest updates</span>
+                        <span class="lang-es">Últimas actualizaciones</span>
+                    </span>
+                    <span class="updates-date">
+                        <span class="lang-en updates-date-long">· April 28, 2026</span>
+                        <span class="lang-es updates-date-long">· 28 de abril, 2026</span>
+                        <span class="updates-date-short">· 28/04</span>
+                    </span>
                 </div>
                 <div class="updates-items">
                     <a href="travel-grants.html" class="updates-pill">
