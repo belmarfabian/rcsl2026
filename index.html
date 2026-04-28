@@ -593,9 +593,29 @@
         }
 
         .schedule-wrapper {
+            --hour: 46px;
+            --thead-h: 52px;
             overflow-x: auto;
             margin: 30px 0 20px;
             -webkit-overflow-scrolling: touch;
+            position: relative;
+        }
+        .schedule-wrapper::after {
+            content: '';
+            position: absolute;
+            top: var(--thead-h);
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 5;
+            background-image: repeating-linear-gradient(
+                to bottom,
+                transparent 0,
+                transparent calc(var(--hour) - 1px),
+                rgba(0, 0, 0, 0.12) calc(var(--hour) - 1px),
+                rgba(0, 0, 0, 0.12) var(--hour)
+            );
         }
         .schedule-table {
             width: 100%;
@@ -606,6 +626,8 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            position: relative;
+            z-index: 1;
         }
         .schedule-table thead th {
             background: #1a1a1a;
@@ -644,7 +666,6 @@
             font-size: 0.88em;
         }
         .schedule-table small { font-size: 0.78em; margin-top: 2px; }
-        .schedule-table { --hour: 46px; }
         .schedule-table tr.h-30 td,
         .schedule-table tr.h-30 th { height: calc(var(--hour) * 0.5); }
         .schedule-table tr.h-60 td,
@@ -2200,7 +2221,19 @@
 
             // Update timeline status based on dates
             updateTimelineStatus();
+
+            // Sync schedule hour-line offset with actual thead height
+            syncScheduleHeader();
         });
+
+        function syncScheduleHeader() {
+            const thead = document.querySelector('.schedule-table thead');
+            const wrapper = document.querySelector('.schedule-wrapper');
+            if (thead && wrapper) {
+                wrapper.style.setProperty('--thead-h', thead.offsetHeight + 'px');
+            }
+        }
+        window.addEventListener('resize', syncScheduleHeader);
 
         // Check timeline dates and mark completed items
         function updateTimelineStatus() {
