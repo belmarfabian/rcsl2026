@@ -66,6 +66,7 @@
             max-width: 960px;
             margin: 0 auto;
             aspect-ratio: 16 / 9;
+            position: relative;
         }
 
         nav {
@@ -584,18 +585,25 @@
         }
 
         .updates-bar {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 5%;
             background: linear-gradient(135deg, #FFF5B0 0%, #FFE066 100%);
             border-top: 3px solid #FF6B6B;
             border-bottom: 3px solid #FF6B6B;
-            padding: 14px 20px;
+            padding: 10px 20px;
+            z-index: 3;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.25);
         }
         .updates-bar-inner {
-            max-width: 1000px;
+            max-width: 100%;
             margin: 0 auto;
             display: flex;
             align-items: center;
-            gap: 24px;
+            gap: 18px;
             flex-wrap: wrap;
+            justify-content: center;
         }
         .updates-label {
             font-weight: 700;
@@ -642,9 +650,12 @@
             color: white;
         }
         @media (max-width: 768px) {
-            .updates-bar-inner { flex-direction: column; align-items: flex-start; gap: 10px; }
-            .updates-items { flex: none; width: 100%; }
-            .updates-pill { font-size: 0.82em; padding: 6px 12px; }
+            .updates-bar { bottom: 38%; padding: 6px 12px; }
+            .updates-bar-inner { flex-direction: column; align-items: center; gap: 6px; }
+            .updates-items { flex: none; width: 100%; justify-content: center; }
+            .updates-pill { font-size: 0.78em; padding: 5px 10px; }
+            .updates-label { font-size: 0.85em; gap: 6px; }
+            .updates-badge { font-size: 0.7em; padding: 2px 7px; }
         }
 
         .cta-button.alt {
@@ -1184,26 +1195,25 @@
 
     <div class="hero" id="home">
         <!-- Banner image with embedded text -->
-    </div>
-
-    <div class="updates-bar">
-        <div class="updates-bar-inner">
-            <div class="updates-label">
-                <span class="updates-badge">NEW</span>
-                <span class="lang-en">Latest updates</span>
-                <span class="lang-es">Últimas actualizaciones</span>
-                <span class="updates-date lang-en">· April 28, 2026</span>
-                <span class="updates-date lang-es">· 28 de abril, 2026</span>
-            </div>
-            <div class="updates-items">
-                <a href="travel-grants.html" class="updates-pill">
-                    <span class="lang-en">✈️ Travel Grants &mdash; Apply by May 25</span>
-                    <span class="lang-es">✈️ Becas de Viaje &mdash; Postular hasta el 25 de mayo</span>
-                </a>
-                <a href="#programme" class="updates-pill">
-                    <span class="lang-en">📄 Preliminary Programme available</span>
-                    <span class="lang-es">📄 Programa preliminar disponible</span>
-                </a>
+        <div class="updates-bar">
+            <div class="updates-bar-inner">
+                <div class="updates-label">
+                    <span class="updates-badge">NEW</span>
+                    <span class="lang-en">Latest updates</span>
+                    <span class="lang-es">Últimas actualizaciones</span>
+                    <span class="updates-date lang-en">· April 28, 2026</span>
+                    <span class="updates-date lang-es">· 28 de abril, 2026</span>
+                </div>
+                <div class="updates-items">
+                    <a href="travel-grants.html" class="updates-pill">
+                        <span class="lang-en">✈️ Travel Grants &mdash; Apply by May 25</span>
+                        <span class="lang-es">✈️ Becas de Viaje &mdash; Postular hasta el 25 de mayo</span>
+                    </a>
+                    <a href="#programme" class="updates-pill">
+                        <span class="lang-en">📄 Preliminary Programme available</span>
+                        <span class="lang-es">📄 Programa preliminar disponible</span>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
