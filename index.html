@@ -652,7 +652,7 @@
         .updates-pill { white-space: nowrap; }
         .updates-date-short { display: none; }
         @media (max-width: 768px) {
-            .updates-bar { bottom: 33%; padding: 5px 8px; }
+            .updates-bar { bottom: 36%; padding: 5px 8px; }
             .updates-bar-inner { flex-direction: row; align-items: center; gap: 6px; flex-wrap: nowrap; justify-content: center; }
             .updates-text { display: none; }
             .updates-date-long { display: none !important; }
@@ -1024,17 +1024,23 @@
 
             nav ul {
                 flex-direction: row;
-                justify-content: center;
-                flex-wrap: wrap;
+                justify-content: flex-start;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
             }
+            nav ul::-webkit-scrollbar { display: none; }
 
             nav ul li {
-                margin: 8px 10px;
+                margin: 0 12px 0 0;
+                flex-shrink: 0;
             }
 
             nav ul li a {
-                font-size: 0.75em;
+                font-size: 0.78em;
                 padding: 3px 0;
+                white-space: nowrap;
             }
 
             .nav-logo {
