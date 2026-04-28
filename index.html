@@ -635,14 +635,16 @@
             border-right: 1px solid #e8e8e8;
         }
         .schedule-table td {
-            padding: 6px 10px;
+            padding: 4px 8px;
             text-align: center;
             border-bottom: 1px solid #e8e8e8;
             border-right: 1px solid #e8e8e8;
             vertical-align: middle;
-            line-height: 1.3;
+            line-height: 1.25;
+            font-size: 0.88em;
         }
-        .schedule-table { --hour: 60px; }
+        .schedule-table small { font-size: 0.78em; margin-top: 2px; }
+        .schedule-table { --hour: 46px; }
         .schedule-table tr.h-30 td,
         .schedule-table tr.h-30 th { height: calc(var(--hour) * 0.5); }
         .schedule-table tr.h-60 td,
@@ -664,7 +666,7 @@
         .schedule-table .business { background: #fffbe6; }
         .schedule-table .social { background: #e6f7e6; }
         .schedule-table .empty { background: #fafafa; }
-        .schedule-table small { display: block; font-size: 0.85em; color: #555; margin-top: 3px; }
+        .schedule-table small { display: block; color: #555; }
 
         .logos {
             display: flex;
