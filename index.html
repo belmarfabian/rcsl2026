@@ -578,6 +578,80 @@
             box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
         }
 
+        .cta-button.alt {
+            background-color: #1a1a1a;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .cta-button.alt:hover {
+            background-color: #333;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .schedule-wrapper {
+            overflow-x: auto;
+            margin: 30px 0 20px;
+            -webkit-overflow-scrolling: touch;
+        }
+        .schedule-table {
+            width: 100%;
+            min-width: 700px;
+            border-collapse: collapse;
+            font-size: 0.92em;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+        .schedule-table thead th {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 12px 10px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.92em;
+            line-height: 1.3;
+        }
+        .schedule-table thead th .day-date {
+            display: block;
+            font-weight: 400;
+            font-size: 0.85em;
+            color: #ccc;
+            margin-top: 2px;
+        }
+        .schedule-table tbody th {
+            background: #fafafa;
+            color: #1a1a1a;
+            padding: 12px 10px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.85em;
+            white-space: nowrap;
+            border-bottom: 1px solid #e8e8e8;
+            border-right: 1px solid #e8e8e8;
+        }
+        .schedule-table td {
+            padding: 12px 10px;
+            text-align: center;
+            border-bottom: 1px solid #e8e8e8;
+            border-right: 1px solid #e8e8e8;
+            vertical-align: middle;
+            line-height: 1.4;
+        }
+        .schedule-table td:last-child,
+        .schedule-table tbody th:last-child { border-right: none; }
+        .schedule-table tr:last-child td,
+        .schedule-table tr:last-child th { border-bottom: none; }
+        .schedule-table .session { background: #fff8f0; color: #1a1a1a; }
+        .schedule-table .keynote { background: #ffe8e8; font-weight: 600; }
+        .schedule-table .break { background: #f5f5f5; color: #777; font-style: italic; }
+        .schedule-table .meal { background: #f0f0f0; color: #555; font-style: italic; }
+        .schedule-table .ceremony { background: #ffd9d9; font-weight: 600; }
+        .schedule-table .roundtable { background: #e8f0ff; }
+        .schedule-table .business { background: #fffbe6; }
+        .schedule-table .social { background: #e6f7e6; }
+        .schedule-table .empty { background: #fafafa; }
+        .schedule-table small { display: block; font-size: 0.85em; color: #555; margin-top: 3px; }
+
         .logos {
             display: flex;
             justify-content: center;
@@ -1749,14 +1823,18 @@
                 </div>
 
                 <div class="info-card">
-                    <h3 class="translate" data-en="Important Note" data-es="Nota Importante">Important Note</h3>
-                    <p style="margin-top: 15px;" class="lang-en">Information about scholarships and financial support will be announced at a later date.</p>
-                    <p style="margin-top: 15px;" class="lang-es">La información sobre becas y apoyo financiero se anunciará en una fecha posterior.</p>
+                    <h3 class="translate" data-en="Travel Grants" data-es="Becas de Viaje">Travel Grants</h3>
+                    <p style="margin-top: 15px;" class="lang-en">RCSL will support the travel costs of some students and post-docs participating in the 2026 Meeting.</p>
+                    <p style="margin-top: 15px;" class="lang-es">La RCSL apoyará los costos de viaje de algunos estudiantes y postdoctorados que participen en la Reunión 2026.</p>
+                    <p style="margin-top: 10px;" class="lang-en"><strong>Application deadline:</strong> May 25, 2026 (24:00 UTC)</p>
+                    <p style="margin-top: 10px;" class="lang-es"><strong>Plazo de postulación:</strong> 25 de mayo de 2026 (24:00 UTC)</p>
+                    <p style="margin-top: 12px;"><a href="travel-grants.html" style="color: #FF6B6B; font-weight: 600;"><span class="lang-en">Read the full call &rarr;</span><span class="lang-es">Ver convocatoria completa &rarr;</span></a></p>
                 </div>
             </div>
 
             <div style="text-align: center; margin-top: 40px;">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLScutaeHhskDLy48rVF16Fv4kQ_WzlErkef1kiYgqf7s9XWUpQ/viewform?usp=header" target="_blank" class="cta-button"><span class="translate" data-en="🎫 Register Now" data-es="🎫 Inscríbete Ahora">🎫 Register Now</span></a>
+                <a href="travel-grants.html" class="cta-button alt"><span class="translate" data-en="✈️ Travel Grants" data-es="✈️ Becas de Viaje">✈️ Travel Grants</span></a>
             </div>
         </section>
 
@@ -1768,18 +1846,101 @@
         <section id="programme">
             <h2 class="translate" data-en="Programme" data-es="Programa">Programme</h2>
 
-            <p class="lang-en"><strong>Preliminary program:</strong> April 20, 2026</p>
-            <p class="lang-es"><strong>Programa preliminar:</strong> 20 de abril, 2026</p>
+            <p class="lang-en"><strong>Preliminary program:</strong> Available now (April 2026)</p>
+            <p class="lang-es"><strong>Programa preliminar:</strong> Disponible (abril de 2026)</p>
             <p class="lang-en"><strong>Final program:</strong> August 24, 2026</p>
             <p class="lang-es"><strong>Programa final:</strong> 24 de agosto, 2026</p>
 
-            <p style="margin-top: 20px;" class="lang-en">The detailed programme will be published according to the timeline above. The conference will feature paper presentations, panel sessions, and other academic activities focused on the sociology of law and justice.</p>
-            <p style="margin-top: 20px;" class="lang-es">El programa detallado se publicará de acuerdo con el cronograma anterior. El congreso contará con presentaciones de ponencias, sesiones de panel y otras actividades académicas centradas en la sociología del derecho y la justicia.</p>
+            <p style="margin-top: 20px;" class="lang-en">The preliminary programme is now available. Below you will find the conference schedule overview and a downloadable PDF with the full preliminary programme, including all paper and panel sessions organized by Working Group.</p>
+            <p style="margin-top: 20px;" class="lang-es">El programa preliminar ya está disponible. A continuación encontrará el esquema general del congreso y un PDF descargable con el programa preliminar completo, incluyendo todas las sesiones de ponencias y paneles organizadas por Grupo de Trabajo.</p>
 
-            <div class="highlight">
-                <strong class="lang-en">Conference Dates:</strong><strong class="lang-es">Fechas del Congreso:</strong> <span class="lang-en">August 31 - September 3, 2026</span><span class="lang-es">31 de agosto - 3 de septiembre, 2026</span><br>
-                <span class="lang-en">Full schedule and session details will be announced with the preliminary program in April 2026.</span>
-                <span class="lang-es">El horario completo y los detalles de las sesiones se anunciarán con el programa preliminar en abril de 2026.</span>
+            <h3 style="margin-top: 35px;" class="translate" data-en="Schedule Overview" data-es="Esquema General">Schedule Overview</h3>
+
+            <div class="schedule-wrapper">
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th><span class="lang-en">Monday</span><span class="lang-es">Lunes</span><span class="day-date">31 Aug</span></th>
+                            <th><span class="lang-en">Tuesday</span><span class="lang-es">Martes</span><span class="day-date">1 Sep</span></th>
+                            <th><span class="lang-en">Wednesday</span><span class="lang-es">Miércoles</span><span class="day-date">2 Sep</span></th>
+                            <th><span class="lang-en">Thursday</span><span class="lang-es">Jueves</span><span class="day-date">3 Sep</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>09:00&ndash;10:00</th>
+                            <td><span class="lang-en">Registration</span><span class="lang-es">Inscripción</span></td>
+                            <td><span class="lang-en">Reception</span><span class="lang-es">Recepción</span></td>
+                            <td><span class="lang-en">Reception</span><span class="lang-es">Recepción</span></td>
+                            <td><span class="lang-en">Reception</span><span class="lang-es">Recepción</span></td>
+                        </tr>
+                        <tr>
+                            <th>10:00&ndash;11:00</th>
+                            <td class="ceremony"><span class="lang-en">Opening Ceremony</span><span class="lang-es">Ceremonia de Apertura</span><small><span class="lang-en">Keynote: Carlos Peña</span><span class="lang-es">Keynote: Carlos Peña</span></small></td>
+                            <td class="roundtable"><span class="lang-en">Roundtable</span><span class="lang-es">Mesa redonda</span><small>Pierre Guibentif</small></td>
+                            <td class="roundtable"><span class="lang-en">Roundtables (2)</span><span class="lang-es">Mesas redondas (2)</span><small><span class="lang-en">Ralf Rogowski · TBD</span><span class="lang-es">Ralf Rogowski · Por definir</span></small></td>
+                            <td class="session"><span class="lang-en">Paper / panel sessions 9</span><span class="lang-es">Sesiones de ponencias / paneles 9</span></td>
+                        </tr>
+                        <tr>
+                            <th>11:00&ndash;11:30</th>
+                            <td class="break" colspan="4"><span class="lang-en">Coffee break</span><span class="lang-es">Coffee break</span></td>
+                        </tr>
+                        <tr>
+                            <th>11:30&ndash;13:00</th>
+                            <td class="session"><span class="lang-en">Paper / panel sessions 1</span><span class="lang-es">Sesiones de ponencias / paneles 1</span></td>
+                            <td class="business"><span class="lang-en">Business meeting RCSL</span><span class="lang-es">Reunión de trabajo RCSL</span><small><span class="lang-en">Plenary 2</span><span class="lang-es">Plenaria 2</span></small></td>
+                            <td class="business"><span class="lang-en">Business meeting RCSL</span><span class="lang-es">Reunión de trabajo RCSL</span><small><span class="lang-en">Plenary 4</span><span class="lang-es">Plenaria 4</span></small></td>
+                            <td class="ceremony"><span class="lang-en">Closing session &mdash; Keynote</span><span class="lang-es">Sesión de cierre &mdash; Keynote</span><small><span class="lang-en">Plenary 5</span><span class="lang-es">Plenaria 5</span></small></td>
+                        </tr>
+                        <tr>
+                            <th>13:00&ndash;14:00</th>
+                            <td class="meal" colspan="4"><span class="lang-en">Lunch</span><span class="lang-es">Almuerzo</span></td>
+                        </tr>
+                        <tr>
+                            <th>14:00&ndash;15:30</th>
+                            <td class="session"><span class="lang-en">Paper / panel sessions 2</span><span class="lang-es">Sesiones de ponencias / paneles 2</span></td>
+                            <td class="session"><span class="lang-en">Paper / panel sessions 5</span><span class="lang-es">Sesiones de ponencias / paneles 5</span></td>
+                            <td class="session"><span class="lang-en">Paper / panel sessions 7</span><span class="lang-es">Sesiones de ponencias / paneles 7</span></td>
+                            <td class="session"><span class="lang-en">Paper / panel sessions 10</span><span class="lang-es">Sesiones de ponencias / paneles 10</span></td>
+                        </tr>
+                        <tr>
+                            <th>15:30&ndash;16:00</th>
+                            <td class="break" colspan="3"><span class="lang-en">Coffee break</span><span class="lang-es">Coffee break</span></td>
+                            <td rowspan="3" class="empty"></td>
+                        </tr>
+                        <tr>
+                            <th>16:00&ndash;17:30</th>
+                            <td class="session"><span class="lang-en">Paper / panel sessions 3</span><span class="lang-es">Sesiones de ponencias / paneles 3</span></td>
+                            <td class="session"><span class="lang-en">Paper / panel sessions 6</span><span class="lang-es">Sesiones de ponencias / paneles 6</span></td>
+                            <td class="session"><span class="lang-en">Paper / panel sessions 8</span><span class="lang-es">Sesiones de ponencias / paneles 8</span></td>
+                        </tr>
+                        <tr>
+                            <th>17:30&ndash;19:00</th>
+                            <td class="session"><span class="lang-en">Paper / panel sessions 4</span><span class="lang-es">Sesiones de ponencias / paneles 4</span></td>
+                            <td class="social"><span class="lang-en">Local committee event</span><span class="lang-es">Evento del comité local</span><small><span class="lang-en">Plenary 2</span><span class="lang-es">Plenaria 2</span></small></td>
+                            <td class="social"><span class="lang-en">Local committee event</span><span class="lang-es">Evento del comité local</span><small><span class="lang-en">Plenary 3</span><span class="lang-es">Plenaria 3</span></small></td>
+                        </tr>
+                        <tr>
+                            <th>19:00</th>
+                            <td class="empty"></td>
+                            <td class="social"><span class="lang-en">Cocktail</span><span class="lang-es">Cóctel</span></td>
+                            <td class="empty"></td>
+                            <td class="social"><span class="lang-en">Closing dinner</span><span class="lang-es">Cena de cierre</span><small><span class="lang-en">By invitation</span><span class="lang-es">Por invitación</span></small></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p style="margin-top: 10px; font-size: 0.85em; color: #888; font-style: italic;" class="lang-en">Preliminary schedule. Subject to change. Final programme will be published on August 24, 2026.</p>
+            <p style="margin-top: 10px; font-size: 0.85em; color: #888; font-style: italic;" class="lang-es">Esquema preliminar. Sujeto a cambios. El programa final se publicará el 24 de agosto de 2026.</p>
+
+            <div style="text-align: center; margin-top: 35px;">
+                <a href="RCSL_2026_Preliminary_Programme.pdf" target="_blank" class="cta-button"><span class="translate" data-en="📄 Download Preliminary Programme (PDF)" data-es="📄 Descargar Programa Preliminar (PDF)">📄 Download Preliminary Programme (PDF)</span></a>
+            </div>
+
+            <div class="highlight" style="margin-top: 30px;">
+                <strong class="lang-en">Conference Dates:</strong><strong class="lang-es">Fechas del Congreso:</strong> <span class="lang-en">August 31 - September 3, 2026</span><span class="lang-es">31 de agosto - 3 de septiembre, 2026</span>
             </div>
         </section>
 

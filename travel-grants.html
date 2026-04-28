@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Grants - RCSL 2026 Santiago</title>
+    <meta name="description" content="Travel Grants for the 2026 RCSL Annual Meeting in Santiago, Chile. Application deadline: May 25, 2026.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&family=Anton&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+        }
+
+        /* Hero banner */
+        .hero {
+            width: 100%;
+            min-height: 360px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 60px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .hero-top-text {
+            font-family: 'Anton', sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #FF6B6B;
+            margin-bottom: 10px;
+        }
+        .hero-title {
+            font-family: 'Anton', sans-serif;
+            font-size: 52px;
+            font-weight: 400;
+            line-height: 1.05;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        .hero-details {
+            font-size: 16px;
+            color: #e0e0e0;
+            margin-bottom: 10px;
+        }
+        .hero-date-line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 12px;
+            font-size: 18px;
+            color: #FF6B6B;
+            font-weight: 600;
+        }
+        .hero-date-line .line {
+            width: 60px;
+            height: 2px;
+            background: #FF6B6B;
+        }
+        .hero-location {
+            font-size: 14px;
+            color: #ccc;
+            margin-top: 6px;
+        }
+        .hero-submission {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        .hero-submission a {
+            color: #FF6B6B;
+            text-decoration: none;
+        }
+
+        /* Status banner */
+        .status-banner {
+            background: #1a1a1a;
+            color: #ffffff;
+            padding: 12px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+        .status-banner strong { color: #FF6B6B; }
+
+        /* Language toggle */
+        .lang-toggle {
+            position: fixed;
+            top: 15px;
+            right: 20px;
+            background: #FF6B6B;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: 'Work Sans', sans-serif;
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 1px;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            transition: background 0.2s;
+        }
+        .lang-toggle:hover { background: #e55a5a; }
+
+        /* Default: show EN, hide ES */
+        .lang-es { display: none; }
+        body.es .lang-en { display: none; }
+        body.es .lang-es { display: block; }
+        body.es li.lang-en, body.es span.lang-en, body.es a.lang-en { display: none; }
+        body.es li.lang-es { display: list-item; }
+        body.es span.lang-es, body.es a.lang-es { display: inline; }
+        li.lang-es { display: none; }
+        span.lang-es, a.lang-es { display: none; }
+        span.lang-en, a.lang-en { display: inline; }
+
+        /* Content */
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 30px 60px;
+        }
+        .content p {
+            margin-bottom: 16px;
+            text-align: justify;
+        }
+        .content a {
+            color: #FF6B6B;
+            text-decoration: none;
+        }
+        .content a:hover { text-decoration: underline; }
+        h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+            border-bottom: 2px solid #FF6B6B;
+            padding-bottom: 8px;
+        }
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+        ul {
+            margin-left: 25px;
+            margin-bottom: 16px;
+        }
+        ul li { margin-bottom: 6px; }
+
+        /* Deadline highlight */
+        .deadline-box {
+            border: 2px solid #FF6B6B;
+            border-radius: 10px;
+            padding: 20px 25px;
+            margin: 25px 0;
+            background: #fff5f5;
+            text-align: center;
+        }
+        .deadline-box .deadline-label {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #e55a5a;
+            margin-bottom: 6px;
+        }
+        .deadline-box .deadline-date {
+            font-family: 'Anton', sans-serif;
+            font-size: 30px;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+        .deadline-box .deadline-time {
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Amounts table */
+        .amounts-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 24px;
+            font-size: 15px;
+        }
+        .amounts-table thead th {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 10px 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        .amounts-table thead th:last-child { text-align: center; }
+        .amounts-table td {
+            padding: 10px 15px;
+            border-bottom: 1px solid #e0e0e0;
+            vertical-align: top;
+        }
+        .amounts-table td:last-child {
+            text-align: center;
+            white-space: nowrap;
+            font-weight: 600;
+            color: #FF6B6B;
+        }
+
+        /* Action buttons */
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: center;
+            margin: 30px 0 10px;
+        }
+        .action-button {
+            display: inline-block;
+            background: #FF6B6B;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .action-button:hover {
+            background: #e55a5a;
+            text-decoration: none;
+        }
+        .action-button.alt {
+            background: #1a1a1a;
+        }
+        .action-button.alt:hover { background: #333; }
+
+        .contact-box {
+            margin-top: 20px;
+            padding: 15px 20px;
+            background: #f5f5f5;
+            border-radius: 8px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #FF6B6B;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .back-link:hover { text-decoration: underline; }
+
+        /* Footer */
+        .cfp-footer {
+            background: #1a1a1a;
+            color: #999;
+            text-align: center;
+            padding: 25px;
+            font-size: 13px;
+        }
+        .cfp-footer a {
+            color: #FF6B6B;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content { padding: 30px 20px; }
+            .hero-title { font-size: 36px; }
+            .content { padding: 30px 20px; }
+            .deadline-box .deadline-date { font-size: 24px; }
+        }
+
+        @media print {
+            body { background: white; }
+            .content { max-width: 100%; }
+            .lang-toggle { display: none; }
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+    </style>
+</head>
+<body>
+
+<button class="lang-toggle" id="langToggle" onclick="toggleLanguage()">ES</button>
+
+<!-- Hero Banner -->
+<div class="hero">
+    <div class="hero-content">
+        <div class="hero-top-text">
+            <span class="lang-en">Travel Grants</span>
+            <span class="lang-es">Becas de Viaje</span>
+        </div>
+        <div class="hero-title">The Democratic<br>Rule of Law<br>in World Society</div>
+        <div class="hero-details">
+            <span class="lang-en">Annual Meeting of the Research<br>Committee on the Sociology of Law (RCSL)</span>
+            <span class="lang-es">Reunión Anual del Comité de Investigación<br>sobre Sociología del Derecho (RCSL)</span>
+        </div>
+        <div class="hero-date-line">
+            August 31, 2026 <span class="line"></span> September 3, 2026
+        </div>
+        <div class="hero-location">Universidad Diego Portales, Santiago de Chile</div>
+        <div class="hero-submission"><a href="https://rcsl2026.udp.cl">www.rcsl2026.udp.cl</a></div>
+    </div>
+</div>
+
+<!-- Status banner -->
+<div class="status-banner">
+    <span class="lang-en"><strong>Applications open</strong> &mdash; Deadline: May 25, 2026 (24:00 UTC)</span>
+    <span class="lang-es"><strong>Postulaciones abiertas</strong> &mdash; Plazo: 25 de mayo de 2026 (24:00 UTC)</span>
+</div>
+
+<!-- Content -->
+<div class="content">
+    <a href="index.html" class="back-link">&larr; <span class="lang-en">Back to main site</span><span class="lang-es">Volver al sitio principal</span></a>
+
+    <h2><span class="lang-en">2026 Santiago de Chile RCSL Meeting &mdash; Travel Grants</span><span class="lang-es">Reunión RCSL 2026 Santiago de Chile &mdash; Becas de Viaje</span></h2>
+
+    <p class="lang-en">The preparation of the 2026 Santiago de Chile RCSL Meeting (<a href="https://rcsl2026.udp.cl/">https://rcsl2026.udp.cl/</a>) is well on the way and its complete programme should be published in the next weeks. It is now time for potential participants to deal with their travel and accommodation arrangements.</p>
+    <p class="lang-es">La preparación de la Reunión RCSL 2026 Santiago de Chile (<a href="https://rcsl2026.udp.cl/">https://rcsl2026.udp.cl/</a>) va por buen camino y su programa completo debería publicarse en las próximas semanas. Ahora es el momento para los participantes potenciales de ocuparse de sus arreglos de viaje y alojamiento.</p>
+
+    <p class="lang-en">As in other years, RCSL will support the travel costs of some of the students and post-docs participating in the 2026 Meeting.</p>
+    <p class="lang-es">Como en otros años, la RCSL apoyará los costos de viaje de algunos estudiantes y postdoctorados que participen en la Reunión 2026.</p>
+
+    <div class="deadline-box">
+        <div class="deadline-label"><span class="lang-en">Application Deadline</span><span class="lang-es">Fecha límite</span></div>
+        <div class="deadline-date"><span class="lang-en">May 25, 2026</span><span class="lang-es">25 de mayo de 2026</span></div>
+        <div class="deadline-time">24:00 UTC</div>
+    </div>
+
+    <h2><span class="lang-en">How to apply</span><span class="lang-es">Cómo postular</span></h2>
+
+    <p class="lang-en">Applications have to be sent by the applicants to <strong>Laura Noemi Lora</strong>, RCSL Secretary and Chair of the 2026 RCSL Santiago de Chile Meeting Travel Grants Committee, at <a href="mailto:lauranoemilora@derecho.uba.ar">lauranoemilora@derecho.uba.ar</a>.</p>
+    <p class="lang-es">Las solicitudes deben ser enviadas por los solicitantes a <strong>Laura Noemi Lora</strong>, Secretaria de la RCSL y Presidenta del Comité de Becas de Viaje de la Reunión RCSL Santiago de Chile 2026, a <a href="mailto:lauranoemilora@derecho.uba.ar">lauranoemilora@derecho.uba.ar</a>.</p>
+
+    <h3><span class="lang-en">Required documents</span><span class="lang-es">Documentos requeridos</span></h3>
+
+    <p class="lang-en">To be eligible, applications have to include:</p>
+    <p class="lang-es">Para ser elegibles, las solicitudes deben incluir:</p>
+
+    <ul>
+        <li class="lang-en">The application form, duly filled in and signed;</li>
+        <li class="lang-es">El formulario de solicitud, debidamente completado y firmado;</li>
+
+        <li class="lang-en">A copy of the email received from the RCSL Santiago Conference 2026 Local Organizing Committee (<a href="mailto:rcsl2026@mail.udp.cl">rcsl2026@mail.udp.cl</a>) notifying the acceptance of the abstract submitted by the applicant;</li>
+        <li class="lang-es">Una copia del correo electrónico recibido del Comité Organizador Local de la Conferencia RCSL Santiago 2026 (<a href="mailto:rcsl2026@mail.udp.cl">rcsl2026@mail.udp.cl</a>) notificando la aceptación del resumen presentado por el solicitante;</li>
+
+        <li class="lang-en">A copy of the applicant's passport;</li>
+        <li class="lang-es">Una copia del pasaporte del solicitante;</li>
+
+        <li class="lang-en">A document certifying the current place of residence of the applicant (if outside the country issuing the passport; for example a document issued by a student residence, or similar);</li>
+        <li class="lang-es">Un documento que certifique el lugar de residencia actual del solicitante (si el lugar está fuera del país que emitió el pasaporte; por ejemplo, documento emitido por una residencia estudiantil, o similar);</li>
+
+        <li class="lang-en">For post-docs, a document certifying the date of the PhD defence.</li>
+        <li class="lang-es">Para postdoctorados, un documento que certifique la fecha de defensa del PhD.</li>
+    </ul>
+
+    <div class="actions">
+        <a href="RCSL_2026_TravelGrant_Form_EN.docx" class="action-button" download>
+            <span class="lang-en">📄 Download form (English)</span>
+            <span class="lang-es">📄 Descargar formulario (English)</span>
+        </a>
+        <a href="RCSL_2026_TravelGrant_Formulario_ES.docx" class="action-button alt" download>
+            <span class="lang-en">📄 Download form (Español)</span>
+            <span class="lang-es">📄 Descargar formulario (Español)</span>
+        </a>
+    </div>
+
+    <h2><span class="lang-en">Eligibility ranking</span><span class="lang-es">Criterios de elegibilidad</span></h2>
+
+    <p class="lang-en">Eligible applications will be ranked according to the status of participant and the country of origin, following the order already adopted for the ISA registration grant call:</p>
+    <p class="lang-es">Las solicitudes elegibles serán clasificadas según el estatus del participante y el país de origen, siguiendo el orden ya adoptado para la convocatoria de subvención de inscripción ISA:</p>
+
+    <ul>
+        <li class="lang-en">Students from C countries</li>
+        <li class="lang-es">Estudiantes de países C</li>
+        <li class="lang-en">Students from B countries</li>
+        <li class="lang-es">Estudiantes de países B</li>
+        <li class="lang-en">Students from A countries</li>
+        <li class="lang-es">Estudiantes de países A</li>
+        <li class="lang-en">Post-doc researchers from C countries (up to three years after PhD)</li>
+        <li class="lang-es">Investigadores postdoctorales de países C (hasta tres años después del PhD)</li>
+        <li class="lang-en">Post-doc researchers from B countries (up to three years after PhD)</li>
+        <li class="lang-es">Investigadores postdoctorales de países B (hasta tres años después del PhD)</li>
+        <li class="lang-en">Post-doc researchers from A countries (up to three years after PhD)</li>
+        <li class="lang-es">Investigadores postdoctorales de países A (hasta tres años después del PhD)</li>
+    </ul>
+
+    <h2><span class="lang-en">Grant amounts</span><span class="lang-es">Montos de la beca</span></h2>
+
+    <table class="amounts-table">
+        <thead>
+            <tr>
+                <th><span class="lang-en">Region</span><span class="lang-es">Región</span></th>
+                <th><span class="lang-en">Grants</span><span class="lang-es">Becas</span></th>
+                <th><span class="lang-en">Amount (USD)</span><span class="lang-es">Monto (USD)</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="lang-en">Latin America</span><span class="lang-es">América Latina</span></td>
+                <td><span class="lang-en">2 grants</span><span class="lang-es">2 becas</span></td>
+                <td>$400</td>
+            </tr>
+            <tr>
+                <td><span class="lang-en">Central &amp; North America</span><span class="lang-es">América Central y del Norte</span></td>
+                <td><span class="lang-en">2 grants</span><span class="lang-es">2 becas</span></td>
+                <td>$700</td>
+            </tr>
+            <tr>
+                <td><span class="lang-en">Other parts of the world</span><span class="lang-es">Otras partes del mundo</span></td>
+                <td><span class="lang-en">4 grants</span><span class="lang-es">4 becas</span></td>
+                <td>$1000</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p class="lang-en">Once the minimum number of grants is allocated, the Student Grant Committee shall ensure a fair re-distribution between these three regions if required by the number of eligible applications.</p>
+    <p class="lang-es">Una vez asignado el número mínimo de becas, el Comité de Becas Estudiantiles asegurará una redistribución equitativa entre estas tres regiones si lo requiere el número de solicitudes elegibles.</p>
+
+    <h2><span class="lang-en">Selection committee</span><span class="lang-es">Comité de selección</span></h2>
+
+    <p class="lang-en">The ranking and the final selection, taking into account the justification of the demand if necessary, will be established by the Student Travel Grant Committee, in principle by <strong>June 10, 2026</strong>. The Committee includes:</p>
+    <p class="lang-es">La clasificación y la selección final, teniendo en cuenta la justificación de la demanda si es necesario, será establecida por el Comité de Becas de Viaje Estudiantil, en principio hasta el <strong>10 de junio de 2026</strong>. El Comité está integrado por:</p>
+
+    <ul>
+        <li><strong>Laura Noemi Lora</strong> &mdash; <span class="lang-en">Argentina (chair)</span><span class="lang-es">Argentina (presidenta)</span></li>
+        <li><strong>Julia Dahlvik</strong> &mdash; <span class="lang-en">Austria</span><span class="lang-es">Austria</span></li>
+        <li><strong>Jeanne Hersant</strong> &mdash; <span class="lang-en">Chile</span><span class="lang-es">Chile</span></li>
+        <li><strong>Edvaldo Moita</strong> &mdash; <span class="lang-en">Brazil</span><span class="lang-es">Brasil</span></li>
+    </ul>
+
+    <h2><span class="lang-en">Payment &amp; obligations</span><span class="lang-es">Pago y obligaciones</span></h2>
+
+    <p class="lang-en">The grant allocated will be paid to the beneficiaries upon presentation of the corresponding travel and accommodation invoices, with the amount to be paid limited to the amount of these invoices.</p>
+    <p class="lang-es">La beca asignada será pagada a los beneficiarios tras la presentación de las facturas correspondientes de viaje y alojamiento, siendo el monto a pagar limitado al monto de estas facturas.</p>
+
+    <p class="lang-en">By applying for a travel grant, applicants declare their availability to write a short report about an aspect of the 2026 Santiago de Chile RCSL Meeting for the RCSL Newsletter.</p>
+    <p class="lang-es">Al solicitar una beca de viaje, los solicitantes declaran su disponibilidad para escribir un breve informe sobre un aspecto de la Reunión RCSL 2026 Santiago de Chile para el Boletín Informativo de la RCSL.</p>
+
+    <div class="contact-box">
+        <span class="lang-en">For questions about the travel grants, please contact <strong>Laura Noemi Lora</strong> at <a href="mailto:lauranoemilora@derecho.uba.ar">lauranoemilora@derecho.uba.ar</a>. For questions about the conference itself, please contact the Local Organizing Committee at <a href="mailto:rcsl2026@mail.udp.cl">rcsl2026@mail.udp.cl</a>.</span>
+        <span class="lang-es">Para preguntas sobre las becas de viaje, por favor contacte a <strong>Laura Noemi Lora</strong> en <a href="mailto:lauranoemilora@derecho.uba.ar">lauranoemilora@derecho.uba.ar</a>. Para preguntas sobre la conferencia, por favor contacte al Comité Organizador Local en <a href="mailto:rcsl2026@mail.udp.cl">rcsl2026@mail.udp.cl</a>.</span>
+    </div>
+</div>
+
+<div class="cfp-footer">
+    <p>&copy; 2025-2026 RCSL Annual Meeting &mdash; Universidad Diego Portales, Santiago, Chile</p>
+    <p><a href="mailto:rcsl2026@mail.udp.cl">rcsl2026@mail.udp.cl</a> | <a href="https://rcsl2026.udp.cl">rcsl2026.udp.cl</a></p>
+</div>
+
+<script>
+    function toggleLanguage() {
+        var body = document.body;
+        var btn = document.getElementById('langToggle');
+        if (body.classList.contains('es')) {
+            body.classList.remove('es');
+            btn.textContent = 'ES';
+            document.documentElement.lang = 'en';
+        } else {
+            body.classList.add('es');
+            btn.textContent = 'EN';
+            document.documentElement.lang = 'es';
+        }
+    }
+</script>
+
+</body>
+</html>
