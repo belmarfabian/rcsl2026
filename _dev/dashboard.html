@@ -81,6 +81,22 @@
   .config-hint { border-left: 2px solid var(--accent); padding: 16px 20px; margin-bottom: 32px; font-size: 13px; color: var(--ink); background: var(--bg-soft); }
   .config-hint code { background: #fff; padding: 2px 6px; font-size: 12px; font-family: monospace; }
 
+  /* Login screen */
+  .login { min-height: 70vh; display: flex; align-items: center; justify-content: center; }
+  .login-box { max-width: 340px; width: 100%; }
+  .login h2 { font-size: 18px; font-weight: 600; margin-bottom: 4px; }
+  .login .sub { color: var(--muted); font-size: 12px; margin-bottom: 28px; }
+  .login input { width: 100%; padding: 12px 14px; border: 1px solid var(--line);
+                 font-family: inherit; font-size: 14px; outline: none; transition: border-color 0.15s; }
+  .login input:focus { border-color: var(--ink); }
+  .login button { width: 100%; margin-top: 10px; padding: 12px; background: var(--accent);
+                  color: #fff; border: none; font-family: inherit; font-size: 14px;
+                  font-weight: 500; cursor: pointer; letter-spacing: 0.3px; }
+  .login button:hover { background: #e85555; }
+  .login button:disabled { opacity: 0.5; cursor: wait; }
+  .login .err { color: var(--accent); font-size: 12px; margin-top: 10px; }
+  .app.hidden { display: none; }
+
   footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--line); font-size: 11px; color: var(--muted); text-align: center; letter-spacing: 0.5px; }
 
   @media (max-width: 700px) {
@@ -93,6 +109,20 @@
 </head>
 <body>
 <div class="wrap">
+
+<div id="login" class="login" style="display:none">
+  <div class="login-box">
+    <h2>RCSL 2026 · Inscripciones</h2>
+    <div class="sub">Acceso restringido</div>
+    <form id="login-form">
+      <input type="password" id="login-pass" placeholder="Contraseña" autofocus required>
+      <button type="submit" id="login-btn">Entrar</button>
+      <div class="err" id="login-err" style="display:none"></div>
+    </form>
+  </div>
+</div>
+
+<div id="app" class="app hidden">
   <header>
     <h1>RCSL 2026 · Inscripciones</h1>
     <div class="subtitle">Estado de pagos y comprobantes</div>
@@ -135,6 +165,8 @@
   </div>
 
   <footer>RCSL 2026 · Dashboard interno · UDP</footer>
+</div>
+
 </div>
 
 <script src="data.js" onerror="window._noData = true"></script>
@@ -258,7 +290,7 @@ function renderTable() {
             <td>${(r.fecha_inscripcion || '').split(' GMT')[0] || '—'}</td>
             <td>${
               r.voucher_local
-                ? `<a class="voucher" href="../../insumos/vouchers/${encodeURIComponent(r.voucher_local)}" target="_blank">ver →</a>`
+                ? `<a class="voucher" href="${(window.VOUCHERS_BASE || '../../insumos/vouchers/')}${encodeURIComponent(r.voucher_local)}" target="_blank">ver →</a>`
                 : (r.voucher_url ? `<a class="voucher" href="${r.voucher_url}" target="_blank">drive →</a>` : '—')
             }</td>
           </tr>`;
@@ -276,17 +308,83 @@ function renderTable() {
   });
 }
 
-function init() {
-  if (typeof window.RCSL_DATA === 'undefined') {
-    document.getElementById('config-hint').style.display = 'block';
-    document.getElementById('table-wrap').innerHTML = '<div class="empty">Sin datos. Generá <code>data.js</code> con build_master.py.</div>';
-    return;
-  }
-  allRows = window.RCSL_DATA.slice();
+function showApp(rows, updated) {
+  allRows = rows.slice();
   allRows.forEach(r => r._status = classify(r));
   document.getElementById('updated').textContent =
-    window.RCSL_UPDATED ? new Date(window.RCSL_UPDATED).toLocaleString('es-CL') : '—';
+    updated ? new Date(updated).toLocaleString('es-CL') : '—';
+  document.getElementById('login').style.display = 'none';
+  document.getElementById('app').classList.remove('hidden');
   render();
+}
+
+async function decryptData(password) {
+  const resp = await fetch('data.enc?_=' + Date.now());
+  if (!resp.ok) throw new Error('No se pudo descargar data.enc (' + resp.status + ')');
+  const buf = new Uint8Array(await resp.arrayBuffer());
+
+  // Formato: 'RCSL'(4) + version(2 LE) + salt(16) + iv(12) + iters(4 LE) + ciphertext
+  const magic = new TextDecoder().decode(buf.slice(0, 4));
+  if (magic !== 'RCSL') throw new Error('Archivo data.enc inválido');
+  const salt = buf.slice(6, 22);
+  const iv   = buf.slice(22, 34);
+  const iters = buf[34] | (buf[35] << 8) | (buf[36] << 16) | (buf[37] << 24);
+  const ct = buf.slice(38);
+
+  const enc = new TextEncoder();
+  const keyMaterial = await crypto.subtle.importKey(
+    'raw', enc.encode(password), { name: 'PBKDF2' }, false, ['deriveKey']);
+  const key = await crypto.subtle.deriveKey(
+    { name: 'PBKDF2', salt, iterations: iters, hash: 'SHA-256' },
+    keyMaterial,
+    { name: 'AES-GCM', length: 256 },
+    false, ['decrypt']);
+
+  const pt = await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, key, ct);
+  return JSON.parse(new TextDecoder().decode(pt));
+}
+
+function init() {
+  // Modo local: data.js ya cargado, sin login
+  if (typeof window.RCSL_DATA !== 'undefined') {
+    showApp(window.RCSL_DATA, window.RCSL_UPDATED);
+    return;
+  }
+
+  // Modo público: pedir password
+  document.getElementById('login').style.display = 'flex';
+  const form = document.getElementById('login-form');
+  const passInput = document.getElementById('login-pass');
+  const btn = document.getElementById('login-btn');
+  const err = document.getElementById('login-err');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    err.style.display = 'none';
+    btn.disabled = true;
+    btn.textContent = 'Descifrando…';
+    try {
+      const payload = await decryptData(passInput.value);
+      // guardar para esta sesión
+      sessionStorage.setItem('rcsl_pass', passInput.value);
+      showApp(payload.rows, payload.updated);
+    } catch (e) {
+      err.textContent = 'Contraseña incorrecta';
+      err.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Entrar';
+      passInput.select();
+    }
+  });
+
+  // si hay pass guardada en sessionStorage, intentar auto-login
+  const saved = sessionStorage.getItem('rcsl_pass');
+  if (saved) {
+    passInput.value = saved;
+    decryptData(saved).then(p => showApp(p.rows, p.updated)).catch(() => {
+      sessionStorage.removeItem('rcsl_pass');
+    });
+  }
 }
 
 document.getElementById('search').addEventListener('input', renderTable);
