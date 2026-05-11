@@ -289,9 +289,11 @@ function renderTable() {
             <td><span class="pill ${st.cls}">${st.txt}</span></td>
             <td>${(r.fecha_inscripcion || '').split(' GMT')[0] || '—'}</td>
             <td>${
-              r.voucher_local
-                ? `<a class="voucher" href="${(window.VOUCHERS_BASE || '../../insumos/vouchers/')}${encodeURIComponent(r.voucher_local)}" target="_blank">ver →</a>`
-                : (r.voucher_url ? `<a class="voucher" href="${r.voucher_url}" target="_blank">drive →</a>` : '—')
+              r.voucher_enc
+                ? `<a class="voucher" href="#" onclick="openEncryptedVoucher(event, '${r.voucher_enc}', '${r.voucher_mime || ''}', '${(r.voucher_filename || '').replace(/'/g, "\\'")}')">ver →</a>`
+                : (r.voucher_local
+                    ? `<a class="voucher" href="${(window.VOUCHERS_BASE || '../../insumos/vouchers/')}${encodeURIComponent(r.voucher_local)}" target="_blank">ver →</a>`
+                    : (r.voucher_url ? `<a class="voucher" href="${r.voucher_url}" target="_blank">drive →</a>` : '—'))
             }</td>
           </tr>`;
         }).join('')}
@@ -318,6 +320,8 @@ function showApp(rows, updated) {
   render();
 }
 
+let sessionKey = null; // CryptoKey AES-GCM en memoria tras login (para vouchers)
+
 async function decryptData(password) {
   const resp = await fetch('data.enc?_=' + Date.now());
   if (!resp.ok) throw new Error('No se pudo descargar data.enc (' + resp.status + ')');
@@ -341,7 +345,32 @@ async function decryptData(password) {
     false, ['decrypt']);
 
   const pt = await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, key, ct);
+  sessionKey = key; // guardar para descifrar vouchers on-demand
   return JSON.parse(new TextDecoder().decode(pt));
+}
+
+async function openEncryptedVoucher(ev, encPath, mime, filename) {
+  ev.preventDefault();
+  if (!sessionKey) { alert('Sesión expirada. Recargá la página.'); return; }
+  const link = ev.currentTarget;
+  const orig = link.textContent;
+  link.textContent = 'descifrando…';
+  try {
+    const resp = await fetch(encPath + '?_=' + Date.now());
+    if (!resp.ok) throw new Error('fetch ' + resp.status);
+    const buf = new Uint8Array(await resp.arrayBuffer());
+    const iv = buf.slice(0, 12);
+    const ct = buf.slice(12);
+    const pt = await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, sessionKey, ct);
+    const blob = new Blob([pt], { type: mime || 'application/octet-stream' });
+    const url = URL.createObjectURL(blob);
+    window.open(url, '_blank');
+    setTimeout(() => URL.revokeObjectURL(url), 60000);
+    link.textContent = orig;
+  } catch (e) {
+    link.textContent = 'error';
+    setTimeout(() => { link.textContent = orig; }, 2000);
+  }
 }
 
 function init() {
