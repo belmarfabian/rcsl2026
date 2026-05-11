@@ -5,3 +5,6 @@ desktop.ini
 ~$*
 *.docx
 *.pdf
+
+# Dashboard: datos personales generados localmente, no publicar
+_dev/data.js
