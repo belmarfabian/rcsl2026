@@ -273,7 +273,6 @@ function renderTable() {
           <th data-sort="categoria" class="${cls('categoria')}">Categoría${arrow('categoria')}</th>
           <th data-sort="_status" class="${cls('_status')}">Estado pago${arrow('_status')}</th>
           <th data-sort="fecha_inscripcion" class="${cls('fecha_inscripcion')}">Fecha insc.${arrow('fecha_inscripcion')}</th>
-          <th>Voucher</th>
         </tr>
       </thead>
       <tbody>
@@ -288,13 +287,6 @@ function renderTable() {
             <td>${r.categoria || '—'}</td>
             <td><span class="pill ${st.cls}">${st.txt}</span></td>
             <td>${(r.fecha_inscripcion || '').split(' GMT')[0] || '—'}</td>
-            <td>${
-              r.voucher_enc
-                ? `<a class="voucher" href="#" onclick="openEncryptedVoucher(event, '${r.voucher_enc}', '${r.voucher_mime || ''}', '${(r.voucher_filename || '').replace(/'/g, "\\'")}')">ver →</a>`
-                : (r.voucher_local
-                    ? `<a class="voucher" href="${(window.VOUCHERS_BASE || '../../insumos/vouchers/')}${encodeURIComponent(r.voucher_local)}" target="_blank">ver →</a>`
-                    : (r.voucher_url ? `<a class="voucher" href="${r.voucher_url}" target="_blank">drive →</a>` : '—'))
-            }</td>
           </tr>`;
         }).join('')}
       </tbody>
