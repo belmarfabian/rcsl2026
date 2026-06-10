@@ -321,7 +321,7 @@ function renderTable() {
           const st = STATUS_LABEL[r._status];
           return `<tr>
             <td>${r.surnames || '—'}</td>
-            <td>${r.nombre || '—'}${r.coautores ? `<div class="coauthors">+ ${r.coautores.split(' | ').map(c => c.split(';')[0].split(',')[0].trim()).join(', ')}</div>` : ''}</td>
+            <td>${r.nombre || '—'}${r.es_coautor === 'si' && r.coautor_de ? `<div class="coauthors">coautor de: ${r.coautor_de}</div>` : ''}</td>
             <td>${r.email || '—'}</td>
             <td>${r.pais || '—'}</td>
             <td>${r.submission_type ? `<span class="pill gray">${r.submission_type}</span>` : '—'}</td>
