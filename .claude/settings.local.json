@@ -21,7 +21,17 @@
       "Bash(done)",
       "Bash(for img in biblioteca-udp.jpg udp-casacentral.jpg udp-derecho.jpg facultad-sociales.jpg escaleras-biblioteca.jpg)",
       "Bash(do file \"$img\")",
-      "Bash(tree:*)"
+      "Bash(tree:*)",
+      "Bash(powershell -Command:*)",
+      "Bash(cat:*)",
+      "Bash(git pull:*)",
+      "Bash(git stash:*)",
+      "Bash(dir:*)",
+      "Bash(powershell.exe -Command:*)",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -File \"G:\\\\Mi unidad\\\\CEP\\\\5_Servicio_Academico\\\\5.1_RCSL_2026\\\\web\\\\_dev\\\\make-zip.ps1\")",
+      "WebFetch(domain:belmarfabian.github.io)",
+      "Bash(git rm:*)",
+      "WebFetch(domain:rcsl2026.udp.cl)"
     ],
     "deny": [],
     "ask": []

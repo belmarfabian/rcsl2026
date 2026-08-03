@@ -665,6 +665,42 @@
             .updates-date { font-size: 0.72em; }
         }
 
+        /* --- FAQ attention callout (nav) --- */
+        nav ul li.faq-li { position: relative; }
+        .faq-callout {
+            position: absolute;
+            top: calc(100% + 16px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: #FF6B6B;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 11px;
+            font-size: 1.1em;
+            font-weight: 800;
+            white-space: nowrap;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+            animation: faq-bounce 1.15s ease-in-out infinite;
+            z-index: 1001;
+            pointer-events: none;
+        }
+        .faq-callout::after {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 11px solid transparent;
+            border-bottom-color: #FF6B6B;
+        }
+        @keyframes faq-bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-8px); }
+        }
+        @media (max-width: 768px) {
+            .faq-callout { display: none; }
+        }
+
         .cta-button.alt {
             background-color: #1a1a1a;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
@@ -1202,7 +1238,12 @@
             <li><a href="#programme" class="translate" data-en="Programme" data-es="Programa">Programme</a></li>
             <li><a href="#venue" class="translate" data-en="Venue" data-es="Sede">Venue</a></li>
             <li><a href="#contact" class="translate" data-en="Contact" data-es="Contacto">Contact</a></li>
-            <li><a href="faq.html" class="translate" data-en="FAQ" data-es="FAQ">FAQ</a></li>
+            <li class="faq-li"><a href="faq.html" class="translate" data-en="FAQ" data-es="FAQ">FAQ</a>
+                <span class="faq-callout">
+                    <span class="lang-en">👀 Check the FAQ!</span>
+                    <span class="lang-es">👀 ¡Mira las FAQ!</span>
+                </span>
+            </li>
         </ul>
     </nav>
 
